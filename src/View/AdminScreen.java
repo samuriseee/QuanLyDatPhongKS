@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-
+import Model.*;
 import bean.BeanList;
 import controller.ScreenController;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class AdminScreen extends javax.swing.JFrame {
     /**
      * Creates new form AdminScreen
      */
-    public AdminScreen() {
+    public AdminScreen(User user) {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ScreenController controller = new ScreenController(jpnView);
@@ -31,6 +31,13 @@ public class AdminScreen extends javax.swing.JFrame {
         listItem.add(new BeanList("Phong",jpnRoom,jlbRoom));
         listItem.add(new BeanList("DatPhong",jpnReser,jlbReser));
         controller.setEvent(listItem);
+        labelNameAdmin.setText(user.getFirstName() + " " + user.getLastName());
+        this.pack();
+        this.setLocationRelativeTo(null);
+    }
+
+    private AdminScreen() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -52,8 +59,8 @@ public class AdminScreen extends javax.swing.JFrame {
         jpnReser = new javax.swing.JPanel();
         jlbReser = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        labelNameAdmin = new javax.swing.JLabel();
+        btnLogout = new javax.swing.JButton();
         jpnView = new javax.swing.JPanel();
 
         jLabel2.setText("jLabel2");
@@ -150,23 +157,23 @@ public class AdminScreen extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(131, 184, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "admin  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/account_circle_FILL1_wght700_GRAD0_opsz24.png"))); // NOI18N
-        jLabel1.setText(" admin name");
+        labelNameAdmin.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        labelNameAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        labelNameAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/account_circle_FILL1_wght700_GRAD0_opsz24.png"))); // NOI18N
+        labelNameAdmin.setText(" admin name");
 
-        jButton1.setBackground(new java.awt.Color(131, 184, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout_FILL1_wght700_GRAD0_opsz24.png"))); // NOI18N
-        jButton1.setText("Log out");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setBackground(new java.awt.Color(131, 184, 255));
+        btnLogout.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout_FILL1_wght700_GRAD0_opsz24.png"))); // NOI18N
+        btnLogout.setText("Log out");
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -178,17 +185,17 @@ public class AdminScreen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelNameAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelNameAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnLogout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -251,9 +258,11 @@ public class AdminScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        this.setVisible(false);
+        LoginScreen lsc = new LoginScreen();
+        lsc.setVisible(true);
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,8 +300,7 @@ public class AdminScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -304,5 +312,6 @@ public class AdminScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jpnRoom;
     private javax.swing.JPanel jpnUser;
     private javax.swing.JPanel jpnView;
+    private javax.swing.JLabel labelNameAdmin;
     // End of variables declaration//GEN-END:variables
 }

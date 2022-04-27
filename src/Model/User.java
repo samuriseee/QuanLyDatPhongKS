@@ -9,21 +9,22 @@ package Model;
  *
  * @author MSII
  */
-public class Customer {
-    private int CustomerId ;
-    private String FirstName ,lastName ,phoneNumber , email , password ;
+public class User {
+    private int UserId ;
+    private String FirstName ,lastName ,phoneNumber , email , password ,idRole ;
     
-    public Customer(int CustomerId , String FirstName ,String lastName , String phoneNumber , String email ,String password){
-        this.CustomerId = CustomerId;
+    public User(int UserId ,String idRole , String FirstName ,String lastName , String phoneNumber , String email ,String password){
+        this.UserId = UserId;
         this.FirstName = FirstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
+        this.idRole = idRole ;
     }
 
-    public int getCustomerId() {
-        return CustomerId;
+    public int getUserId() {
+        return UserId;
     }
 
     public String getEmail() {
@@ -45,4 +46,9 @@ public class Customer {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
+    public String getIdRole() {
+        return idRole;
+    }
+    
 }
