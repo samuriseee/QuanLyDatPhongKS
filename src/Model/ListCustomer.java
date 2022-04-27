@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
-import Model.Customer;
+import Model.User;
 import java.util.*;
 
 /**
@@ -12,9 +12,9 @@ import java.util.*;
  * @author MSII
  */
 public class ListCustomer {
-    private ArrayList<Customer> arrCustomer  ;
+    private ArrayList<User> arrCustomer  ;
 
-    public ListCustomer(ArrayList<Customer> listCus) {
+    public ListCustomer(ArrayList<User> listCus) {
         arrCustomer = listCus;
     }
     
