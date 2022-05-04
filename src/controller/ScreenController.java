@@ -16,6 +16,9 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Kiet
@@ -72,8 +75,15 @@ public class ScreenController {
                     node = new ClientManagerScreen();
                     break;
                 case "Phong":
-                    node = new RoomManagerScreen();
+                {
+                    try {
+                        node = new RoomManagerScreen();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ScreenController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
+
                 case "DatPhong":
                     node = new ReservationManagerScreen();
                     break;
