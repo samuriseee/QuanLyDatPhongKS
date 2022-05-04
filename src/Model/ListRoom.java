@@ -5,14 +5,25 @@
  */
 package Model;
 import java.util.*;
+import Model.Room;
 /**
  *
  * @author MSII
  */
 public class ListRoom {
-    private ArrayList<Room> arrListRoom ;
+    private ArrayList<Room> arrListRoom = new ArrayList<Room>();
     
-    public ListRoom(ArrayList<Room> listRm){
-        arrListRoom = listRm;
+    public ListRoom(ArrayList<Room> listRoom){
+        this.arrListRoom = listRoom;
     }
+
+    public ArrayList<Room> getArrListRoom() {
+        return arrListRoom;
+    }
+
+    public void setArrListRoom(ArrayList<Room> arrListRoom) {
+        this.arrListRoom = arrListRoom;
+    }
+    
+    
 }
