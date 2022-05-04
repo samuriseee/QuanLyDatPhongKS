@@ -6,17 +6,21 @@
 package Service;
 
 import DAO.*;
-
+import Model.Room;
+import java.sql.SQLException;
+import java.util.ArrayList;
 /**
  *
  * @author MSII
  */
-public class RoomsDAO {
-    private RoomsDAO roomsDAO;
-    public RoomsDAO(){
-        roomsDAO = new RoomsDAO();
+public class RoomsService {
+    private RoomsDAO roomsDao;
+    public RoomsService(){
+        roomsDao = new RoomsDAO();
     }
-    
+     public ArrayList<Room> getAllRooms() throws SQLException{
+        return roomsDao.getAllRoom();
+    }
     /*
         write the logic you want to do with the data returned from the server ^^
     */

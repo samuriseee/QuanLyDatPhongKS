@@ -37,7 +37,7 @@ public class AdminScreen extends javax.swing.JFrame {
     }
 
     private AdminScreen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     /**
@@ -157,7 +157,7 @@ public class AdminScreen extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(131, 184, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         labelNameAdmin.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         labelNameAdmin.setForeground(new java.awt.Color(255, 255, 255));
