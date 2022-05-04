@@ -5,6 +5,7 @@
  */
 package View;
 import Model.*;
+import Service.UserService;
 /**
  *
  * @author MSII
@@ -23,7 +24,7 @@ public class UserScreen extends javax.swing.JFrame {
     }
 
     private UserScreen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     /**
