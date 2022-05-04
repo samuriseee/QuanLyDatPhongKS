@@ -14,10 +14,10 @@ import java.sql.SQLException;
  */
 public class JDBCgetConnection {
     public Connection getConnection(){
-        var sever = "NameYourComputer\\SQL2019";
+        var sever = "SAMURISEEE\\SQL2019";
         var user = "sa";
-        var password = "....";
-        var db = "Name Database";
+        var password = "cabber123";
+        var db = "Manager_Hotel";
         var port = 1433;
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setUser(user);

@@ -45,3 +45,8 @@ alter table Customer
 
 insert into Customer (FirstName , lastName ,PhoneNumber ,email ,passwordd)
 			values	 ('Java','swing','0898159582','javahehe@gmail.com','123456')
+
+insert into Rooms(RoomType,Rates,NumberOfBed) 
+	values ('single',3000,1),
+			('double',4500,2),
+			('family',6000,4)

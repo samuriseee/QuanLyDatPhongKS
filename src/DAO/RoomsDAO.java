@@ -4,20 +4,25 @@
  * and open the template in the editor.
  */
 package DAO;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.sql.Statement;
 import Model.*;
+import java.util.ArrayList;
+import DAO.JDBCgetConnection;
+import java.util.ArrayList;
 /**
  *
  * @author MSII
  */
 public class RoomsDAO {
-    private JDBCgetConnection db;
-    public RoomsDAO(){
-        db = new JDBCgetConnection();
-    }
+    
+      private JDBCgetConnection db;
+      public RoomsDAO() {
+          db = new JDBCgetConnection();
+      }
+
+        
+    
     /*
     
         This package is for interaction with database !!
