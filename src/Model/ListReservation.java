@@ -12,9 +12,14 @@ import java.util.*;
  * @author MSII
  */
 public class ListReservation {
-    private ArrayList<Reservation> arrReservation  ;
+    private ArrayList<Reservation> arrReservation = new ArrayList<Reservation>() ;
 
     public ListReservation(ArrayList<Reservation> listReser) {
         arrReservation = listReser;
     }
+
+    public ArrayList<Reservation> getArrReservation() {
+        return arrReservation;
+    }
+    
 }

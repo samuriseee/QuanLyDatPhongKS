@@ -33,7 +33,8 @@ public class Room {
     public int getNumberOfBed() {
         return numberOfBed;
     }
-
+    
+    
     public void setNumberOfBed(int numberOfBed) {
         this.numberOfBed = numberOfBed;
     }

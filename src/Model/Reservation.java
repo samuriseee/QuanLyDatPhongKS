@@ -13,8 +13,8 @@ public class Reservation {
     private int reservationNumber ,customerId ,roomNumber , numberOfGuests ;
     private String checkInDate , checkOutDate ,reservationDate ;
     
-    public Reservation(int reservationNumber , int customerId , int roomNumber , int numberOfGuests ,
-            String checkInDate,String checkOutDate,String reservationDate){
+    public Reservation(int reservationNumber , int customerId , int roomNumber  ,
+            String checkInDate,String checkOutDate , int numberOfGuests,String reservationDate){
         this.reservationNumber = reservationNumber;
         this.customerId = customerId;
         this.roomNumber = roomNumber;

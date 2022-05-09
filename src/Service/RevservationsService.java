@@ -6,6 +6,9 @@
 package Service;
 
 import DAO.*;
+import Model.Reservation;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,4 +23,7 @@ public class RevservationsService {
     /*
         write the logic you want to do with the data returned from the server ^^
     */
+    public ArrayList<Reservation> getReservationById(int idUser) throws SQLException{
+        return reservationsDAO.getReservationById(idUser);
+    }
 }

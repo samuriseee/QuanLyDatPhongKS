@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class LoginScreen extends javax.swing.JFrame {
     private UserService userService = new UserService();
+   
     /**
      * Creates new form LoginScreen
      */

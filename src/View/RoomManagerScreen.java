@@ -38,6 +38,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
         getModelTable().getDataVector().removeAllElements();
         list.forEach((room) -> {
             getModelTable().addRow(new Object[]{room.getRoomNumber(),room.getRoomType(),room.getNumberOfBed(),room.getRates(),room.isAvainable()});
+            System.out.println(room.isAvainable());
         });
 
     }
@@ -100,7 +101,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
         SearchInput.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         SearchInput.setForeground(new java.awt.Color(0, 0, 0));
-        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
         SearchInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SearchInputKeyReleased(evt);
