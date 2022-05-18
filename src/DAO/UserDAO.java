@@ -75,7 +75,18 @@ public class UserDAO {
         ps.setInt(2, roomNumber);
         ps.executeUpdate();
     }
-    
+    public User getUserById(int idUser) throws SQLException{
+        Statement stm = db.getConnection().createStatement();
+        ResultSet resultSet = null;
+        String query = "select * from _User where UserId = '" + idUser + "'";
+        System.out.println(query);
+        resultSet = stm.executeQuery(query);
+        User user = null;
+        while(resultSet.next()){
+            user = new User(resultSet.getInt(1) , resultSet.getString(2),resultSet.getString(3) , resultSet.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7));
+        }
+        return user;
+    }
     
 
 }

@@ -26,4 +26,7 @@ public class RevservationsService {
     public ArrayList<Reservation> getReservationById(int idUser) throws SQLException{
         return reservationsDAO.getReservationById(idUser);
     }
+    public ArrayList<Reservation> getAllReservation() throws SQLException{
+        return reservationsDAO.getAllReservation();
+    }
 }

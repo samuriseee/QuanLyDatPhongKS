@@ -32,6 +32,10 @@ public class UserService {
         return userDao.getUser(email);
     }
 
+    public User getUserById(int idUser) throws SQLException{
+        return userDao.getUserById(idUser);
+    }
+    
     public void register(String idRole, String FirstName, String lastName, String PhoneNumber, String email, String passwordd) throws SQLException {
         userDao.register(idRole, FirstName, lastName, PhoneNumber, email, passwordd);
     }
