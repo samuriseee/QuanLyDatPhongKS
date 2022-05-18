@@ -22,7 +22,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
    
     public CheckOutScreen(int roomNumber , int cusId , Reservation res ,String currentDate ) throws SQLException {
         initComponents();
-        room = roomsService.getRoomById(roomNumber);
+        room = roomsService.getRoomByRoomNumber(roomNumber);
         user = userService.getUserById(cusId);
         reservation = res ;
         crDate = currentDate ;
