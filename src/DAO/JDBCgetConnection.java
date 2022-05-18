@@ -1,35 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAO;
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
+//import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-
-/**
- *
- * @author MSII
- */
+import java.sql.DriverManager;
 public class JDBCgetConnection {
-    public Connection getConnection(){
-        var sever = "NGUYENTHANHHUNG\\SQL2019";
-        var user = "sa";
-        var password = "anhkp123";
-        var db = "Manager_Hotel";
-        var port = 1433;
-        SQLServerDataSource ds = new SQLServerDataSource();
-        ds.setUser(user);
-        ds.setPassword(password);
-        ds.setDatabaseName(db);
-        ds.setServerName(sever);
-        ds.setPortNumber(port);
-        Connection conn = null;
-        try {
-             conn = ds.getConnection();
+    public static Connection getConnection() {
+        final String url = "jdbc:jtds:sqlserver://DESKTOP-JPON6UV:1433/Manager_Hotel";
+        try{
+            Class.forName("net.sourceforge.jtds.jdbc.Driver");
+            return DriverManager.getConnection("jdbc:jtds:sqlserver://DESKTOP-JPON6UV:1433/Manager_Hotel");
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(JDBCgetConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(JDBCgetConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        return conn;
+        return null;
+    }
+    public static void main(String []args){
+        Connection con = JDBCgetConnection.getConnection();
+        if(con != null)
+            System.out.println("Co");
+        else
+            System.out.println("Ko");
     }
 }
