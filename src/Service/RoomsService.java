@@ -21,6 +21,9 @@ public class RoomsService {
      public ArrayList<Room> getAllRooms() throws SQLException{
         return roomsDao.getAllRoom();
     }
+     public Room getRoomById(int idRoom) throws SQLException{
+        return roomsDao.getRoomById(idRoom);
+     }
     /*
         write the logic you want to do with the data returned from the server ^^
     */
