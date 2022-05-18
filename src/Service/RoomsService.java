@@ -21,10 +21,16 @@ public class RoomsService {
      public ArrayList<Room> getAllRooms() throws SQLException{
         return roomsDao.getAllRoom();
     }
-     public Room getRoomById(int idRoom) throws SQLException{
-        return roomsDao.getRoomById(idRoom);
-     }
-    /*
-        write the logic you want to do with the data returned from the server ^^
-    */
+    public void addNewRoom(int roomNumber , String roomType , double rates , int numberOfBed,boolean avaiable) throws SQLException {
+        roomsDao.addNewRoom(roomNumber, roomType, rates, numberOfBed,avaiable);
+    }
+    public void updateRoom(int roomNumber , String roomType , double rates , int numberOfBed, boolean avaiable, int roomOldID) throws SQLException {
+        roomsDao.updateRoom(roomNumber, roomType, rates, numberOfBed,avaiable,roomOldID);
+    }
+    public Room getRoomByRoomNumber(int roomNumber) throws SQLException {
+        return roomsDao.getRoomByRoomNumber(roomNumber);
+    }
+    public void DeleteRoom(int roomNumber) throws SQLException {
+        roomsDao.DeleteRoom(roomNumber);
+    }
 }

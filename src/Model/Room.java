@@ -14,6 +14,7 @@ public class Room {
     private String roomType ;
     private double rates;
     private boolean Avainable;
+    
     public Room(int roomNumber , String roomType , double rates , int numberOfBed, boolean Avainable) {
         this.roomNumber = roomNumber ;
         this.roomType = roomType ;
