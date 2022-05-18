@@ -5,17 +5,56 @@
  */
 package View;
 
+import Model.Reservation;
+import Service.*;
+import com.raven.datechooser.EventDateChooser;
+import com.raven.datechooser.SelectedAction;
+import com.raven.datechooser.SelectedDate;
+import java.awt.Color;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Kiet
  */
 public class ReservationManagerScreen extends javax.swing.JPanel {
-
+    private RevservationsService revservationsService_thanhHung155 = new RevservationsService();
+    private ArrayList<Reservation> reservations_thanhHung155 ;
+    private Reservation reservationCk_thanhHung155 ;
+    private int romNb , cusId , reserNb ;
     /**
      * Creates new form ReservationManagerScreen
      */
-    public ReservationManagerScreen() {
+    
+    public DefaultTableModel getModelTable() {
+        DefaultTableModel model = (DefaultTableModel) tableReservation_thanhHung155.getModel();
+        return model;
+    }
+
+    public void setTable(ArrayList<Reservation> list) {
+        getModelTable().getDataVector().removeAllElements();
+        list.forEach((reservation) -> {
+            getModelTable().addRow(new Object[]{reservation.getReservationNumber() , reservation.getCustomerId(), reservation.getRoomNumber(), reservation.getCheckInDate(), reservation.getCheckOutDate(), reservation.getNumberOfGuests(), reservation.getReservationDate()});
+        });
+    }
+    
+    public ReservationManagerScreen() throws SQLException {
         initComponents();
+        dateChooser.addEventDateChooser(new EventDateChooser() {
+            @Override
+            public void dateSelected(SelectedAction action, SelectedDate date) {
+                System.out.println(date.getDay() + "-" + date.getMonth() + "-" + date.getYear());
+                if (action.getAction() == SelectedAction.DAY_SELECTED) {
+                    dateChooser.hidePopup();
+                }
+            }
+        });
+        reservations_thanhHung155 = revservationsService_thanhHung155.getAllReservation();
+        setTable(reservations_thanhHung155);
     }
 
     /**
@@ -27,19 +66,91 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateChooser = new com.raven.datechooser.DateChooser();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableReservation_thanhHung155 = new javax.swing.JTable();
+        btnCheckOut_thanhHung155 = new javax.swing.JButton();
+
+        dateChooser.setForeground(new java.awt.Color(97, 155, 231));
+
+        tableReservation_thanhHung155.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ReservationNumber", "CustomerId", "RoomNumber", "CheckInDate", "CheckOutDate", "NumberOfGuests", "ReservationDate"
+            }
+        ));
+        tableReservation_thanhHung155.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableReservation_thanhHung155MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableReservation_thanhHung155);
+
+        btnCheckOut_thanhHung155.setText("Check Out");
+        btnCheckOut_thanhHung155.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckOut_thanhHung155ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1211, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 846, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(235, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCheckOut_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(458, 458, 458))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCheckOut_thanhHung155)
+                .addContainerGap(124, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tableReservation_thanhHung155MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableReservation_thanhHung155MouseClicked
+        int selectedRow = tableReservation_thanhHung155.getSelectedRow();
+        reserNb = Integer.parseInt(getModelTable().getValueAt(selectedRow, 0).toString());
+        cusId = Integer.parseInt(getModelTable().getValueAt(selectedRow, 1).toString());
+        romNb = Integer.parseInt(getModelTable().getValueAt(selectedRow, 2).toString());
+        reservations_thanhHung155.forEach(reservation -> {
+            if(reservation.getReservationNumber() == reserNb){
+                reservationCk_thanhHung155 = reservation ;
+            }
+        });
+        
+    }//GEN-LAST:event_tableReservation_thanhHung155MouseClicked
+
+    private void btnCheckOut_thanhHung155ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckOut_thanhHung155ActionPerformed
+        CheckOutScreen coscr;
+        SelectedDate d = dateChooser.getSelectedDate();
+        String currentDate = d.getDay() + "-" + d.getMonth() + "-" + d.getYear() ;
+        try {
+            coscr = new CheckOutScreen(romNb , cusId , reservationCk_thanhHung155 , currentDate);
+            coscr.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(ReservationManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnCheckOut_thanhHung155ActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCheckOut_thanhHung155;
+    private com.raven.datechooser.DateChooser dateChooser;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tableReservation_thanhHung155;
     // End of variables declaration//GEN-END:variables
+
 }

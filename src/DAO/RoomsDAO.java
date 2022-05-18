@@ -31,6 +31,18 @@ public class RoomsDAO {
         }
         return rooms;
     }
+    public Room getRoomById(int idRoom) throws SQLException{
+        Room room = null ;
+        Statement stm = db.getConnection().createStatement();
+        ResultSet resultSet = null;
+        String query = "Select * from Rooms where RoomNumber = '" + idRoom + "'";
+        resultSet = stm.executeQuery(query);
+        while(resultSet.next()){
+            room = new Room(resultSet.getInt(1), resultSet.getString(2), resultSet.getDouble(3), resultSet.getInt(4), resultSet.getBoolean(5));
+        }
+        return room;
+    }
+    
     
     public ArrayList<Room> DeleteRoom(int roomNumber) throws SQLException {
         ArrayList<Room> rooms = new ArrayList<Room>();

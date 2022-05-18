@@ -85,8 +85,15 @@ public class ScreenController {
                     break;
 
                 case "DatPhong":
-                    node = new ReservationManagerScreen();
+                {
+                    try {
+                        node = new ReservationManagerScreen();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ScreenController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
+
                 default:
                     node = new ClientManagerScreen();
                     break;

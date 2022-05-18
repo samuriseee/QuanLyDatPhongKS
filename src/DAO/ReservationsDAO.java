@@ -41,4 +41,19 @@ public class ReservationsDAO {
         }
         return arrReservations_thanhHung155;
     }
+    public ArrayList<Reservation> getAllReservation() throws SQLException{
+        ArrayList<Reservation> arrReservations_thanhHung155 = new ArrayList<Reservation>(); ;
+        Reservation reservation ;
+        Statement stm = db.getConnection().createStatement();
+        ResultSet resultSet = null;
+        String query = "select * from Reservation";
+        System.out.println(query);
+        resultSet = stm.executeQuery(query);
+        
+        while (resultSet.next()) {
+            reservation = new Reservation(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getString(4), resultSet.getString(5), resultSet.getInt(6), resultSet.getString(7));
+            arrReservations_thanhHung155.add(reservation);
+        }
+        return arrReservations_thanhHung155;
+    }
 }

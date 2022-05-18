@@ -116,6 +116,17 @@ public class BookingRoom extends javax.swing.JFrame {
             }
         });
 
+        txtDate1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtDate1MouseClicked(evt);
+            }
+        });
+        txtDate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDate1ActionPerformed(evt);
+            }
+        });
+
         labelRN_thanhHung155.setText("Room Number : ");
 
         labelRT_thanhHung155.setText("Room Type : ");
@@ -183,9 +194,8 @@ public class BookingRoom extends javax.swing.JFrame {
                                     .addComponent(valueRoomNumber_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(valueRoomType_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(296, 296, 296)
-                                .addComponent(btnBackUserScr_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(136, 136, 136)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                                .addComponent(btnBackUserScr_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,6 +267,14 @@ public class BookingRoom extends javax.swing.JFrame {
             Logger.getLogger(BookingRoom.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBooking_ThanhHung155MouseClicked
+
+    private void txtDate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDate1ActionPerformed
+
+    private void txtDate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDate1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDate1MouseClicked
 
     /**
      * @param args the command line arguments
