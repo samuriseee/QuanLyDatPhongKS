@@ -7,6 +7,8 @@ package View;
 import Model.*;
 import bean.BeanList;
 import controller.ScreenController;
+import com.formdev.flatlaf.FlatDarkLaf;
+import javax.swing.UIManager;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;

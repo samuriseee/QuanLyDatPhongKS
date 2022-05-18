@@ -38,7 +38,6 @@ public class RoomManagerScreen extends javax.swing.JPanel {
         getModelTable().getDataVector().removeAllElements();
         list.forEach((room) -> {
             getModelTable().addRow(new Object[]{room.getRoomNumber(),room.getRoomType(),room.getNumberOfBed(),room.getRates(),room.isAvainable()});
-            System.out.println(room.isAvainable());
         });
 
     }
@@ -68,8 +67,8 @@ public class RoomManagerScreen extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         SearchInput = new javax.swing.JTextField();
         AddButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -101,7 +100,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
         SearchInput.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         SearchInput.setForeground(new java.awt.Color(0, 0, 0));
-        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
         SearchInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SearchInputKeyReleased(evt);
@@ -118,18 +117,23 @@ public class RoomManagerScreen extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(238, 224, 102));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Edit");
-
-        jButton3.setBackground(new java.awt.Color(211, 71, 71));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Delete");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        editButton.setBackground(new java.awt.Color(238, 224, 102));
+        editButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        editButton.setForeground(new java.awt.Color(255, 255, 255));
+        editButton.setText("Edit");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                editButtonActionPerformed(evt);
+            }
+        });
+
+        deleteButton.setBackground(new java.awt.Color(211, 71, 71));
+        deleteButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
             }
         });
 
@@ -200,9 +204,9 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -219,8 +223,8 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SearchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
@@ -228,14 +232,33 @@ public class RoomManagerScreen extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
-        this.setVisible(false);
+        
+        
         AddNewRoomScreen addRoom = new AddNewRoomScreen();
         addRoom.setVisible(true);
+        
     }//GEN-LAST:event_AddButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        
+        int row = RoomTable.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(RoomManagerScreen.this, "Chon phong muon xoa", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int confirm = JOptionPane.showConfirmDialog(RoomManagerScreen.this, "Chac chan muon xoa khong?");
+            if (confirm == JOptionPane.YES_OPTION) {
+                int roomNumber = Integer.valueOf(String.valueOf(RoomTable.getValueAt(row, 0)));
+                try {
+                    roomService.DeleteRoom(roomNumber);
+                    
+                    setTable(arrRoom.getArrListRoom());
+                } catch (SQLException ex) {
+                    Logger.getLogger(RoomManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
     public void searchTable(String value) {
         TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(getModelTable());
         RoomTable.setRowSorter(trs);
@@ -245,13 +268,33 @@ public class RoomManagerScreen extends javax.swing.JPanel {
         searchTable(SearchInput.getText());
     }//GEN-LAST:event_SearchInputKeyReleased
 
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        
+        int row = RoomTable.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(RoomManagerScreen.this, "Chon phong muon sua", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int roomNumber = Integer.valueOf(String.valueOf(RoomTable.getValueAt(row, 0)));
+            
+            try {
+                Room RoomNeedUpdated = roomService.getRoomByRoomNumber(roomNumber);
+                UpdateRoom screenUpdate = new UpdateRoom(RoomNeedUpdated);
+                screenUpdate.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(RoomManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_editButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButton;
     private javax.swing.JTable RoomTable;
     private javax.swing.JTextField SearchInput;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
