@@ -118,6 +118,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CheckOutScreen");
 
         bill.setColumns(20);
         bill.setRows(5);
