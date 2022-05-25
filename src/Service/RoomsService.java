@@ -21,6 +21,12 @@ public class RoomsService {
      public ArrayList<Room> getAllRooms() throws SQLException{
         return roomsDao.getAllRoom();
     }
+    public ArrayList<Room> SearchRoomsByString(String s) throws SQLException{
+        return roomsDao.searchRoomsByString(s);
+    }
+    public void deleteRoom(int id) throws SQLException{
+        roomsDao.deleteRoom(id);
+    }
     /*
         write the logic you want to do with the data returned from the server ^^
     */
