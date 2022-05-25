@@ -48,8 +48,8 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
         roomTypeCB = new javax.swing.JComboBox<>();
         NumberOfBedCB = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
-        addButton = new javax.swing.JButton();
-        backButton = new javax.swing.JButton();
+        Bt_Add_CTuanKiet206 = new javax.swing.JButton();
+        Bt_Black_CTuanKiet206 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,27 +94,27 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        addButton.setBackground(new java.awt.Color(131, 184, 255));
-        addButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        addButton.setForeground(new java.awt.Color(255, 255, 255));
-        addButton.setText("Add");
-        addButton.setMaximumSize(new java.awt.Dimension(72, 27));
-        addButton.setMinimumSize(new java.awt.Dimension(72, 27));
-        addButton.addActionListener(new java.awt.event.ActionListener() {
+        Bt_Add_CTuanKiet206.setBackground(new java.awt.Color(131, 184, 255));
+        Bt_Add_CTuanKiet206.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Bt_Add_CTuanKiet206.setForeground(new java.awt.Color(255, 255, 255));
+        Bt_Add_CTuanKiet206.setText("Add");
+        Bt_Add_CTuanKiet206.setMaximumSize(new java.awt.Dimension(72, 27));
+        Bt_Add_CTuanKiet206.setMinimumSize(new java.awt.Dimension(72, 27));
+        Bt_Add_CTuanKiet206.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
+                Bt_Add_CTuanKiet206ActionPerformed(evt);
             }
         });
 
-        backButton.setBackground(new java.awt.Color(211, 71, 71));
-        backButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        backButton.setForeground(new java.awt.Color(255, 255, 255));
-        backButton.setText("Back");
-        backButton.setMaximumSize(new java.awt.Dimension(72, 27));
-        backButton.setMinimumSize(new java.awt.Dimension(72, 27));
-        backButton.addActionListener(new java.awt.event.ActionListener() {
+        Bt_Black_CTuanKiet206.setBackground(new java.awt.Color(211, 71, 71));
+        Bt_Black_CTuanKiet206.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Bt_Black_CTuanKiet206.setForeground(new java.awt.Color(255, 255, 255));
+        Bt_Black_CTuanKiet206.setText("Back");
+        Bt_Black_CTuanKiet206.setMaximumSize(new java.awt.Dimension(72, 27));
+        Bt_Black_CTuanKiet206.setMinimumSize(new java.awt.Dimension(72, 27));
+        Bt_Black_CTuanKiet206.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
+                Bt_Black_CTuanKiet206ActionPerformed(evt);
             }
         });
 
@@ -136,9 +136,9 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
                             .addComponent(roomNumber)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(148, 148, 148)
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Bt_Black_CTuanKiet206, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Bt_Add_CTuanKiet206, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -157,8 +157,8 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
                 .addComponent(Price, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Bt_Add_CTuanKiet206, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(Bt_Black_CTuanKiet206, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 38, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -181,7 +181,7 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PriceActionPerformed
 
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+    private void Bt_Add_CTuanKiet206ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Add_CTuanKiet206ActionPerformed
         try {
             roomSer.addNewRoom(Integer.parseInt(roomNumber.getText()) , roomTypeCB.getSelectedItem().toString() , Double.parseDouble(Price.getText()) , Integer.parseInt(NumberOfBedCB.getSelectedItem().toString()),true);
             JOptionPane.showMessageDialog(this, "Add new room success ","" , JOptionPane.INFORMATION_MESSAGE);
@@ -189,9 +189,9 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(AddNewRoomScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_addButtonActionPerformed
+    }//GEN-LAST:event_Bt_Add_CTuanKiet206ActionPerformed
 
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+    private void Bt_Black_CTuanKiet206ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Black_CTuanKiet206ActionPerformed
         this.setVisible(false);
         RoomManagerScreen RoomMa;
         try {
@@ -202,7 +202,7 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
         }
         
        
-    }//GEN-LAST:event_backButtonActionPerformed
+    }//GEN-LAST:event_Bt_Black_CTuanKiet206ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,10 +220,10 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bt_Add_CTuanKiet206;
+    private javax.swing.JButton Bt_Black_CTuanKiet206;
     private javax.swing.JComboBox<String> NumberOfBedCB;
     private javax.swing.JTextField Price;
-    private javax.swing.JButton addButton;
-    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

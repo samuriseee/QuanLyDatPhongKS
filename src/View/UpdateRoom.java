@@ -61,6 +61,7 @@ public class UpdateRoom extends javax.swing.JFrame {
         roomStatus = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("UpdateRoom");
 
         jPanel1.setBackground(new java.awt.Color(236, 247, 253));
 
@@ -114,13 +115,11 @@ public class UpdateRoom extends javax.swing.JFrame {
             }
         });
 
-        NumberOfBedCB.setBackground(new java.awt.Color(255, 255, 255));
         NumberOfBedCB.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         NumberOfBedCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         NumberOfBedCB.setToolTipText("");
         NumberOfBedCB.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Number of Bed", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(36, 139, 214))); // NOI18N
 
-        roomTypeCB.setBackground(new java.awt.Color(255, 255, 255));
         roomTypeCB.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         roomTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Double", "Family" }));
         roomTypeCB.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Room Type", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(36, 139, 214))); // NOI18N
@@ -128,7 +127,6 @@ public class UpdateRoom extends javax.swing.JFrame {
         roomNumber.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         roomNumber.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Room Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
 
-        roomStatus.setBackground(new java.awt.Color(255, 255, 255));
         roomStatus.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         roomStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "True", "False" }));
         roomStatus.setToolTipText("");
@@ -190,7 +188,7 @@ public class UpdateRoom extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

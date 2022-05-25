@@ -60,9 +60,9 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                          <Component id="backButton" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="Bt_Black_CTuanKiet206" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="addButton" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="Bt_Add_CTuanKiet206" min="-2" pref="90" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -86,8 +86,8 @@
                   <Component id="Price" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="addButton" pref="31" max="32767" attributes="0"/>
-                      <Component id="backButton" max="32767" attributes="0"/>
+                      <Component id="Bt_Add_CTuanKiet206" pref="31" max="32767" attributes="0"/>
+                      <Component id="Bt_Black_CTuanKiet206" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
               </Group>
@@ -217,7 +217,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="javax.swing.JButton" name="addButton">
+        <Component class="javax.swing.JButton" name="Bt_Add_CTuanKiet206">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="b8" red="83" type="rgb"/>
@@ -237,10 +237,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bt_Add_CTuanKiet206ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="backButton">
+        <Component class="javax.swing.JButton" name="Bt_Black_CTuanKiet206">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="47" green="47" red="d3" type="rgb"/>
@@ -260,7 +260,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bt_Black_CTuanKiet206ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
