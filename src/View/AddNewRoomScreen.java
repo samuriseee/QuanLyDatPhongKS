@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  * @author Kiet
  */
 public class AddNewRoomScreen extends javax.swing.JFrame {
-    private RoomsService roomSer = new RoomsService();
+    private RoomsService roomSer_TuanKiet05 = new RoomsService();
     /**
      * Creates new form AddNewRoom2
      */
@@ -183,7 +183,7 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         try {
-            roomSer.addNewRoom(Integer.parseInt(roomNumber.getText()) , roomTypeCB.getSelectedItem().toString() , Double.parseDouble(Price.getText()) , Integer.parseInt(NumberOfBedCB.getSelectedItem().toString()),true);
+            roomSer_TuanKiet05.addNewRoom(Integer.parseInt(roomNumber.getText()) , roomTypeCB.getSelectedItem().toString() , Double.parseDouble(Price.getText()) , Integer.parseInt(NumberOfBedCB.getSelectedItem().toString()),true);
             JOptionPane.showMessageDialog(this, "Add new room success ","" , JOptionPane.INFORMATION_MESSAGE);
             this.dispose();
         } catch (SQLException ex) {
@@ -193,10 +193,10 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         this.setVisible(false);
-        RoomManagerScreen RoomMa;
+        RoomManagerScreen RoomMa_05;
         try {
-            RoomMa = new RoomManagerScreen();
-            RoomMa.setVisible(true);
+            RoomMa_05 = new RoomManagerScreen();
+            RoomMa_05.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(AddNewRoomScreen.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -26,11 +26,11 @@ import javax.swing.table.TableRowSorter;
  */
 public class RoomManagerScreen extends javax.swing.JPanel {
 
-    private ListRoom arrRoom;
-    private RoomsService roomService = new RoomsService();
+    private ListRoom arrRoom_TuanKiet05;
+    private RoomsService roomService_TuanKiet05 = new RoomsService();
 
     public DefaultTableModel getModelTable() {
-        DefaultTableModel model = (DefaultTableModel) RoomTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) RoomTable_TuanKiet05.getModel();
         return model;
     }
 
@@ -44,13 +44,13 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
     public RoomManagerScreen() throws SQLException {
         initComponents();
-        arrRoom = new ListRoom(roomService.getAllRooms());
-        setTable(arrRoom.getArrListRoom());
+        arrRoom_TuanKiet05 = new ListRoom(roomService_TuanKiet05.getAllRooms());
+        setTable(arrRoom_TuanKiet05.getArrListRoom());
         
-        RoomTable.getTableHeader().setBackground(new Color(131, 184, 255));
-        RoomTable.getTableHeader().setForeground(new Color(255, 255, 255));
-        RoomTable.getTableHeader().setPreferredSize(new Dimension(35, 35));
-        RoomTable.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
+        RoomTable_TuanKiet05.getTableHeader().setBackground(new Color(131, 184, 255));
+        RoomTable_TuanKiet05.getTableHeader().setForeground(new Color(255, 255, 255));
+        RoomTable_TuanKiet05.getTableHeader().setPreferredSize(new Dimension(35, 35));
+        RoomTable_TuanKiet05.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
     }
 
     /**
@@ -63,7 +63,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        RoomTable = new javax.swing.JTable();
+        RoomTable_TuanKiet05 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         SearchInput = new javax.swing.JTextField();
         AddButton = new javax.swing.JButton();
@@ -76,10 +76,10 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(236, 247, 253));
 
-        RoomTable.setBackground(new java.awt.Color(255, 255, 255));
-        RoomTable.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        RoomTable.setForeground(new java.awt.Color(51, 51, 51));
-        RoomTable.setModel(new javax.swing.table.DefaultTableModel(
+        RoomTable_TuanKiet05.setBackground(new java.awt.Color(255, 255, 255));
+        RoomTable_TuanKiet05.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        RoomTable_TuanKiet05.setForeground(new java.awt.Color(51, 51, 51));
+        RoomTable_TuanKiet05.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -90,9 +90,9 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        RoomTable.setRowHeight(35);
-        RoomTable.setRowMargin(5);
-        jScrollPane1.setViewportView(RoomTable);
+        RoomTable_TuanKiet05.setRowHeight(35);
+        RoomTable_TuanKiet05.setRowMargin(5);
+        jScrollPane1.setViewportView(RoomTable_TuanKiet05);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(36, 139, 214));
@@ -241,17 +241,17 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         
-        int row = RoomTable.getSelectedRow();
+        int row = RoomTable_TuanKiet05.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(RoomManagerScreen.this, "Chon phong muon xoa", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             int confirm = JOptionPane.showConfirmDialog(RoomManagerScreen.this, "Chac chan muon xoa khong?");
             if (confirm == JOptionPane.YES_OPTION) {
-                int roomNumber = Integer.valueOf(String.valueOf(RoomTable.getValueAt(row, 0)));
+                int roomNumber = Integer.valueOf(String.valueOf(RoomTable_TuanKiet05.getValueAt(row, 0)));
                 try {
-                    roomService.DeleteRoom(roomNumber);
+                    roomService_TuanKiet05.DeleteRoom(roomNumber);
                     
-                    setTable(arrRoom.getArrListRoom());
+                    setTable(arrRoom_TuanKiet05.getArrListRoom());
                 } catch (SQLException ex) {
                     Logger.getLogger(RoomManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -261,7 +261,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
     public void searchTable(String value) {
         TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(getModelTable());
-        RoomTable.setRowSorter(trs);
+        RoomTable_TuanKiet05.setRowSorter(trs);
         trs.setRowFilter(RowFilter.regexFilter(value));
     }
     private void SearchInputKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchInputKeyReleased
@@ -270,14 +270,14 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         
-        int row = RoomTable.getSelectedRow();
+        int row = RoomTable_TuanKiet05.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(RoomManagerScreen.this, "Chon phong muon sua", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            int roomNumber = Integer.valueOf(String.valueOf(RoomTable.getValueAt(row, 0)));
+            int roomNumber = Integer.valueOf(String.valueOf(RoomTable_TuanKiet05.getValueAt(row, 0)));
             
             try {
-                Room RoomNeedUpdated = roomService.getRoomByRoomNumber(roomNumber);
+                Room RoomNeedUpdated = roomService_TuanKiet05.getRoomByRoomNumber(roomNumber);
                 UpdateRoom screenUpdate = new UpdateRoom(RoomNeedUpdated);
                 screenUpdate.setVisible(true);
             } catch (SQLException ex) {
@@ -291,7 +291,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButton;
-    private javax.swing.JTable RoomTable;
+    private javax.swing.JTable RoomTable_TuanKiet05;
     private javax.swing.JTextField SearchInput;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;

@@ -23,16 +23,16 @@ import javax.swing.JOptionPane;
  */
 public class UpdateRoom extends javax.swing.JFrame {
 
-    private RoomsService roomSer = new RoomsService();
-    private Room room;
-    int oldRoomNumber;
+    private RoomsService roomSer_TuanKiet05 = new RoomsService();
+    private Room room_TuanKiet05;
+    int oldRoomNumber_TuanKiet05;
 
     /**
      * Creates new form UpdateRoom
      */
     public UpdateRoom(Room room) {
         initComponents();
-        oldRoomNumber = room.getRoomNumber();
+        oldRoomNumber_TuanKiet05 = room.getRoomNumber();
         roomNumber.setText(String.valueOf(room.getRoomNumber()));
         Price.setText(String.valueOf(room.getRates()));
         NumberOfBedCB.setSelectedItem(String.valueOf(room.getNumberOfBed()));
@@ -202,10 +202,10 @@ public class UpdateRoom extends javax.swing.JFrame {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         this.setVisible(false);
-        RoomManagerScreen RoomMa;
+        RoomManagerScreen RoomMa_TuanKiet05;
         try {
-            RoomMa = new RoomManagerScreen();
-            RoomMa.setVisible(true);
+            RoomMa_TuanKiet05 = new RoomManagerScreen();
+            RoomMa_TuanKiet05.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(AddNewRoomScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -215,7 +215,7 @@ public class UpdateRoom extends javax.swing.JFrame {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         try {
             
-            roomSer.updateRoom(Integer.parseInt(roomNumber.getText()), roomTypeCB.getSelectedItem().toString(), Double.parseDouble(Price.getText()), Integer.parseInt(NumberOfBedCB.getSelectedItem().toString()), Boolean.parseBoolean(roomStatus.getSelectedItem().toString()),oldRoomNumber);
+            roomSer_TuanKiet05.updateRoom(Integer.parseInt(roomNumber.getText()), roomTypeCB.getSelectedItem().toString(), Double.parseDouble(Price.getText()), Integer.parseInt(NumberOfBedCB.getSelectedItem().toString()), Boolean.parseBoolean(roomStatus.getSelectedItem().toString()),oldRoomNumber_TuanKiet05);
             JOptionPane.showMessageDialog(this, "Update room success ", "", JOptionPane.INFORMATION_MESSAGE);
             this.setVisible(false);
             RoomManagerScreen RoomMa = new RoomManagerScreen();
