@@ -245,7 +245,7 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
         SelectedDate d = dateChooser.getSelectedDate();
         String currentDate = d.getDay() + "-" + d.getMonth() + "-" + d.getYear() ;
         try {
-            coscr = new CheckOutScreen(romNb , cusId , reservationCk_thanhHung155 , currentDate);
+            coscr = new CheckOutScreen(romNb , cusId , reservationCk_thanhHung155 , currentDate , tableReservation_thanhHung155 ,reservations_thanhHung155 );
             coscr.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(ReservationManagerScreen.class.getName()).log(Level.SEVERE, null, ex);

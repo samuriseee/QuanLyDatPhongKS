@@ -96,5 +96,11 @@ public class RoomsDAO {
         ps.executeUpdate();
     } 
 
+    public void updateRoomById(int id_thanhHung155) throws SQLException{
+        PreparedStatement ps = db.getConnection().prepareStatement("Update Rooms set Avainable = ?  where roomNumber = ?");
+        ps.setInt(1, 1);
+        ps.setInt(2, id_thanhHung155);
+        ps.executeUpdate();
+    }
 
 }

@@ -33,4 +33,7 @@ public class RoomsService {
     public void DeleteRoom(int roomNumber) throws SQLException {
         roomsDao.DeleteRoom(roomNumber);
     }
+    public void updateRoomById(int id_thanhHung155) throws SQLException{
+        roomsDao.updateRoomById(id_thanhHung155);
+    }
 }
