@@ -24,13 +24,13 @@ import java.util.logging.Logger;
  * @author Kiet
  */
 public class ScreenController {
-    private JPanel root;
+    private JPanel root_TuanKiet05;
     private String kindSelected = "";
     
     private List<BeanList> listItem = null;
 
     public ScreenController(JPanel jpnroot) {
-        this.root = jpnroot;
+        this.root_TuanKiet05 = jpnroot;
     }
     
     public void setView (JPanel jpnItem, JLabel jlbItem) {
@@ -39,11 +39,11 @@ public class ScreenController {
         jpnItem.setBackground(new Color(36,139,214));
         jlbItem.setBackground(new Color(36,139,214));
         
-        root.removeAll();
-        root.setLayout(new BorderLayout());
-        root.add(new ClientManagerScreen());
-        root.validate();
-        root.repaint();
+        root_TuanKiet05.removeAll();
+        root_TuanKiet05.setLayout(new BorderLayout());
+        root_TuanKiet05.add(new ClientManagerScreen());
+        root_TuanKiet05.validate();
+        root_TuanKiet05.repaint();
         
     }
     public void setEvent(List<BeanList> listItem) {
@@ -98,11 +98,11 @@ public class ScreenController {
                     node = new ClientManagerScreen();
                     break;
             }
-            root.removeAll();
-            root.setLayout(new BorderLayout());
-            root.add(node);
-            root.validate();
-            root.repaint();
+            root_TuanKiet05.removeAll();
+            root_TuanKiet05.setLayout(new BorderLayout());
+            root_TuanKiet05.add(node);
+            root_TuanKiet05.validate();
+            root_TuanKiet05.repaint();
             setChangeBackground(kind);
         }
         

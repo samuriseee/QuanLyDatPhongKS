@@ -24,18 +24,18 @@ public class AdminScreen extends javax.swing.JFrame {
     /**
      * Creates new form AdminScreen
      */
-    public AdminScreen(User user) {
+    public AdminScreen(User user_TuanKiet05) {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ScreenController controller = new ScreenController(jpnView);
         controller.setView(jpnUser, jlbUser);
         
-        List<BeanList> listItem = new ArrayList<>();
-        listItem.add(new BeanList("NguoiDung",jpnUser,jlbUser));
-        listItem.add(new BeanList("Phong",jpnRoom,jlbRoom));
-        listItem.add(new BeanList("DatPhong",jpnReser,jlbReser));
-        controller.setEvent(listItem);
-        labelNameAdmin.setText(user.getFirstName() + " " + user.getLastName());
+        List<BeanList> listItem_TuanKiet05 = new ArrayList<>();
+        listItem_TuanKiet05.add(new BeanList("NguoiDung",jpnUser,jlbUser));
+        listItem_TuanKiet05.add(new BeanList("Phong",jpnRoom,jlbRoom));
+        listItem_TuanKiet05.add(new BeanList("DatPhong",jpnReser,jlbReser));
+        controller.setEvent(listItem_TuanKiet05);
+        labelNameAdmin.setText(user_TuanKiet05.getFirstName() + " " + user_TuanKiet05.getLastName());
         this.pack();
         this.setLocationRelativeTo(null);
     }
