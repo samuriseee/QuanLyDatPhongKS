@@ -56,4 +56,11 @@ public class ReservationsDAO {
         }
         return arrReservations_thanhHung155;
     }
+    
+    public void setReservationCheckOutDate(int idReservation_thanhHung155 , String checkOutDate_thanhHung155) throws SQLException{
+        PreparedStatement ps = db.getConnection().prepareStatement("set dateformat dmy Update Reservation set CheckOutDate = ?  where ReservationNumber = ?");
+        ps.setString(1, checkOutDate_thanhHung155);
+        ps.setInt(2, idReservation_thanhHung155);
+        ps.executeUpdate();
+    }
 }

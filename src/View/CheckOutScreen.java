@@ -6,30 +6,52 @@ import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.print.PrinterException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
 
 
 public class CheckOutScreen extends javax.swing.JFrame {
-    private RoomsService roomsService = new RoomsService();
-    private UserService userService = new UserService();
-    private Reservation reservation;
-    private Room room ;
-    private User user ;
-    private String crDate ;
-   
-    public CheckOutScreen(int roomNumber , int cusId , Reservation res ,String currentDate ) throws SQLException {
+    private RoomsService roomsService_thanhHung155 = new RoomsService();
+    private RevservationsService revservationsService_thanhHung155 = new RevservationsService();
+    private UserService userService_thanhHung155 = new UserService();
+    private Reservation reservation_thanhHung155;
+    private Room room_thanhHung155 ;
+    private User user_thanhHung155 ;
+    private String crDate_thanhHUng155 ;
+    private JTable referenceTableReservation_thanhHung155 ;
+    private ArrayList<Reservation> listReservation_thanhHung155;
+    
+    
+    public DefaultTableModel getModelTable() {
+        DefaultTableModel model = (DefaultTableModel) referenceTableReservation_thanhHung155.getModel();
+        return model;
+    }
+
+    public void setTable(ArrayList<Reservation> list) {
+        getModelTable().getDataVector().removeAllElements();
+        list.forEach((reservation) -> {
+            getModelTable().addRow(new Object[]{reservation.getReservationNumber() , reservation.getCustomerId(), reservation.getRoomNumber(), reservation.getCheckInDate(), reservation.getCheckOutDate(), reservation.getNumberOfGuests(), reservation.getReservationDate()});
+        });
+    }
+    
+    
+    public CheckOutScreen(int roomNumber_thanhHung155 , int cusId_thanhHung155 , Reservation res_thanhHung155 ,String currentDate_thanhHung155
+            ,JTable tableFromRe_thanhHung155 , ArrayList<Reservation> arrReservation_thanhHung155) throws SQLException {
         initComponents();
-        room = roomsService.getRoomByRoomNumber(roomNumber);
-        user = userService.getUserById(cusId);
-        reservation = res ;
-        crDate = currentDate ;
-        Too.setText(String.valueOf(room.getRates()));
+        room_thanhHung155 = roomsService_thanhHung155.getRoomByRoomNumber(roomNumber_thanhHung155);
+        user_thanhHung155 = userService_thanhHung155.getUserById(cusId_thanhHung155);
+        reservation_thanhHung155 = res_thanhHung155 ;
+        crDate_thanhHUng155 = currentDate_thanhHung155 ;
+        referenceTableReservation_thanhHung155 = tableFromRe_thanhHung155 ;
+        listReservation_thanhHung155 = arrReservation_thanhHung155 ;
+        Too.setText(String.valueOf(room_thanhHung155.getRates()));
     }
 
     private CheckOutScreen() {
@@ -43,21 +65,21 @@ public class CheckOutScreen extends javax.swing.JFrame {
         try {
             bill.setText("                         Dao Tien Hotel \n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "Name :"+ "  "+ user.getFirstName() + " " + user.getLastName() + "\n");
+            bill.setText(bill.getText() + "Name :"+ "  "+ user_thanhHung155.getFirstName() + " " + user_thanhHung155.getLastName() + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "Phone Number:"+ "  "+user.getPhoneNumber() + "\n");
+            bill.setText(bill.getText() + "Phone Number:"+ "  "+user_thanhHung155.getPhoneNumber() + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "Room Number:"+ "  "+ room.getRoomNumber() + "\n");
+            bill.setText(bill.getText() + "Room Number:"+ "  "+ room_thanhHung155.getRoomNumber() + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "Rates:"+ "  "+ room.getRates() + "\n");
+            bill.setText(bill.getText() + "Rates:"+ "  "+ room_thanhHung155.getRates() + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "NumberOfGuest:"+"  "+ reservation.getNumberOfGuests() + "\n");
+            bill.setText(bill.getText() + "NumberOfGuest:"+"  "+ reservation_thanhHung155.getNumberOfGuests() + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "CheckInDate:"+ "  " + reservation.getCheckInDate() + "\n");
+            bill.setText(bill.getText() + "CheckInDate:"+ "  " + reservation_thanhHung155.getCheckInDate() + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "CheckOutDate"+ "  " + crDate + "\n");
+            bill.setText(bill.getText() + "CheckOutDate"+ "  " + crDate_thanhHUng155 + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
-            bill.setText(bill.getText() + "ReservationDate:"+ "  " + reservation.getReservationDate() + "\n");
+            bill.setText(bill.getText() + "ReservationDate:"+ "  " + reservation_thanhHung155.getReservationDate() + "\n");
             bill.setText(bill.getText() + "----------------------------------------------------------------\n");
             bill.setText(bill.getText() + "SubTotal :\t"+Too.getText()+"\n");
             bill.setText(bill.getText() + "Cash :\t"+Cash.getText()+"\n");
@@ -239,6 +261,15 @@ public class CheckOutScreen extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         bill_print();
+        try {
+            roomsService_thanhHung155.updateRoomById(room_thanhHung155.getRoomNumber());
+            revservationsService_thanhHung155.setReservationCheckOutDate(reservation_thanhHung155.getReservationNumber(), crDate_thanhHUng155);
+            listReservation_thanhHung155 = revservationsService_thanhHung155.getAllReservation();
+            setTable(listReservation_thanhHung155);
+            this.setVisible(false);
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckOutScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     public static void main(String args[]) throws UnsupportedLookAndFeelException {

@@ -29,4 +29,7 @@ public class RevservationsService {
     public ArrayList<Reservation> getAllReservation() throws SQLException{
         return reservationsDAO.getAllReservation();
     }
+    public void setReservationCheckOutDate(int idReservation_thanhHung155 , String checkOutDate_thanhHung155) throws SQLException{
+        reservationsDAO.setReservationCheckOutDate(idReservation_thanhHung155, checkOutDate_thanhHung155);
+    }
 }
