@@ -14,9 +14,9 @@ import java.sql.SQLException;
  */
 public class JDBCgetConnection {
     public Connection getConnection(){
-        var sever = "NGUYENTHANHHUNG\\SQL2019";
+        var sever = "HAPPYNEHIHI\\SQLEXPRESS";
         var user = "sa";
-        var password = "anhkp123";
+        var password = "123";
         var db = "Manager_Hotel";
         var port = 1433;
         SQLServerDataSource ds = new SQLServerDataSource();
