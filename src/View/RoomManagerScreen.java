@@ -284,8 +284,6 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                 Logger.getLogger(RoomManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        this.setVisible(false);
-        
     }//GEN-LAST:event_editButtonActionPerformed
 
 

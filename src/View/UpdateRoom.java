@@ -38,6 +38,7 @@ public class UpdateRoom extends javax.swing.JFrame {
         NumberOfBedCB.setSelectedItem(String.valueOf(room.getNumberOfBed()));
         roomTypeCB.setSelectedItem(room.getRoomType());
         roomStatus.setSelectedItem(room.isAvainable());
+        this.setLocationRelativeTo(null);
     }
 
     /**

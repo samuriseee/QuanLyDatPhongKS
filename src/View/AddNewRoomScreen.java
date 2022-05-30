@@ -29,7 +29,7 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
     public AddNewRoomScreen() {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        
+        this.setLocationRelativeTo(null);
     }
 
     /**

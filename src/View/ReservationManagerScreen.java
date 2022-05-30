@@ -17,7 +17,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -44,6 +46,12 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
         });
     }
     
+    public void searchTable(String value) {
+        TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(getModelTable());
+        tableReservation_thanhHung155.setRowSorter(trs);
+        trs.setRowFilter(RowFilter.regexFilter(value));
+    }
+    
     public ReservationManagerScreen() throws SQLException {
         initComponents();
         dateChooser.addEventDateChooser(new EventDateChooser() {
@@ -56,6 +64,10 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
             }
         });
         reservations_thanhHung155 = revservationsService_thanhHung155.getAllReservation();
+        int allReservation_thanhHung155 = reservations_thanhHung155.size();
+        totalReservation_thanhHung155.setText(Integer.toString(allReservation_thanhHung155));
+        Double totalIncome_thanhHung155 = revservationsService_thanhHung155.getAllRates() ;
+        totalInCome_thanhHung155.setText(totalIncome_thanhHung155.toString() + "$");
         setTable(reservations_thanhHung155);
         tableReservation_thanhHung155.getTableHeader().setBackground(new Color(131, 184, 255));
         tableReservation_thanhHung155.getTableHeader().setForeground(new Color(255, 255, 255));
@@ -81,8 +93,10 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        totalReservation_thanhHung155 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        totalInCome_thanhHung155 = new javax.swing.JLabel();
 
         dateChooser.setForeground(new java.awt.Color(97, 155, 231));
 
@@ -105,6 +119,11 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
                 tableReservation_thanhHung155MouseClicked(evt);
             }
         });
+        tableReservation_thanhHung155.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tableReservation_thanhHung155KeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableReservation_thanhHung155);
 
         btnCheckOut_thanhHung155.setBackground(new java.awt.Color(36, 139, 214));
@@ -120,7 +139,7 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
 
         SearchInput.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         SearchInput.setForeground(new java.awt.Color(0, 0, 0));
-        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
         SearchInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SearchInputKeyReleased(evt);
@@ -137,13 +156,20 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(36, 139, 214));
         jLabel2.setText("Total Reservation");
 
+        totalReservation_thanhHung155.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        totalReservation_thanhHung155.setText("jLabel4");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(totalReservation_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -151,7 +177,9 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalReservation_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -160,13 +188,18 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(36, 139, 214));
         jLabel3.setText("Total Income");
 
+        totalInCome_thanhHung155.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        totalInCome_thanhHung155.setText("jLabel4");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(totalInCome_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -174,6 +207,8 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(totalInCome_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -254,8 +289,12 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCheckOut_thanhHung155ActionPerformed
 
     private void SearchInputKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchInputKeyReleased
-        // searchTable(SearchInput.getText());
+        searchTable(SearchInput.getText());
     }//GEN-LAST:event_SearchInputKeyReleased
+
+    private void tableReservation_thanhHung155KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableReservation_thanhHung155KeyReleased
+        
+    }//GEN-LAST:event_tableReservation_thanhHung155KeyReleased
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -270,6 +309,8 @@ public class ReservationManagerScreen extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableReservation_thanhHung155;
+    private javax.swing.JLabel totalInCome_thanhHung155;
+    private javax.swing.JLabel totalReservation_thanhHung155;
     // End of variables declaration//GEN-END:variables
 
 }
