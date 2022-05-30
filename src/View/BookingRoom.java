@@ -88,21 +88,22 @@ public class BookingRoom extends javax.swing.JFrame {
         dateChooser = new com.raven.datechooser.DateChooser();
         jButton5 = new javax.swing.JButton();
         txtDate1 = new javax.swing.JTextField();
-        labelRN_thanhHung155 = new javax.swing.JLabel();
         valueRoomNumber_thanhHung155 = new javax.swing.JLabel();
-        labelRT_thanhHung155 = new javax.swing.JLabel();
         valueRoomType_thanhHung155 = new javax.swing.JLabel();
-        labelRates_thanhHung155 = new javax.swing.JLabel();
         valueRates_thanhHung155 = new javax.swing.JLabel();
-        labelNumberOfBed_thanhHung155 = new javax.swing.JLabel();
         valueNumberOfBed_thanhHung155 = new javax.swing.JLabel();
-        labelCheckInDate_thanhHung155 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         valueNbG_thanhHung155 = new javax.swing.JTextField();
-        labelRvD_thanhHung155 = new javax.swing.JLabel();
         reservationDate_thanhHung155 = new javax.swing.JLabel();
         btnBackUserScr_thanhHung155 = new javax.swing.JLabel();
-        btnBooking_ThanhHung155 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        labelRN_thanhHung155 = new javax.swing.JTextField();
+        labelRT_thanhHung155 = new javax.swing.JTextField();
+        labelRates_thanhHung156 = new javax.swing.JTextField();
+        labelNumberOfBed_thanhHung156 = new javax.swing.JTextField();
+        labelCheckInDate_thanhHung156 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JTextField();
+        labelRvD_thanhHung155 = new javax.swing.JTextField();
+        btnBooking_ThanhHung155 = new javax.swing.JButton();
 
         dateChooser.setForeground(new java.awt.Color(97, 155, 231));
         dateChooser.setTextRefernce(txtDate1);
@@ -128,20 +129,6 @@ public class BookingRoom extends javax.swing.JFrame {
             }
         });
 
-        labelRN_thanhHung155.setText("Room Number : ");
-
-        labelRT_thanhHung155.setText("Room Type : ");
-
-        labelRates_thanhHung155.setText("Rates : ");
-
-        labelNumberOfBed_thanhHung155.setText("NumberOfBed : ");
-
-        labelCheckInDate_thanhHung155.setText("Check In Date :");
-
-        jLabel1.setText("Number Of  Guests : ");
-
-        labelRvD_thanhHung155.setText("Reservation Date :");
-
         btnBackUserScr_thanhHung155.setText("Back");
         btnBackUserScr_thanhHung155.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBackUserScr_thanhHung155.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,11 +137,73 @@ public class BookingRoom extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(36, 139, 214));
+        jLabel2.setText("Booking Room");
+
+        labelRN_thanhHung155.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelRN_thanhHung155.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Room Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        labelRN_thanhHung155.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelRN_thanhHung155ActionPerformed(evt);
+            }
+        });
+
+        labelRT_thanhHung155.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelRT_thanhHung155.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Room Type", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        labelRT_thanhHung155.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelRT_thanhHung155ActionPerformed(evt);
+            }
+        });
+
+        labelRates_thanhHung156.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelRates_thanhHung156.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rates", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        labelRates_thanhHung156.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelRates_thanhHung156ActionPerformed(evt);
+            }
+        });
+
+        labelNumberOfBed_thanhHung156.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelNumberOfBed_thanhHung156.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NumberOfBed", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(36, 139, 214))); // NOI18N
+        labelNumberOfBed_thanhHung156.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelNumberOfBed_thanhHung156ActionPerformed(evt);
+            }
+        });
+
+        labelCheckInDate_thanhHung156.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelCheckInDate_thanhHung156.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Check In Date", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(36, 139, 214))); // NOI18N
+        labelCheckInDate_thanhHung156.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelCheckInDate_thanhHung156ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Number Of Guests", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(36, 139, 214))); // NOI18N
+        jLabel3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLabel3ActionPerformed(evt);
+            }
+        });
+
+        labelRvD_thanhHung155.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelRvD_thanhHung155.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Reservation Date", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(36, 139, 214))); // NOI18N
+        labelRvD_thanhHung155.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelRvD_thanhHung155ActionPerformed(evt);
+            }
+        });
+
+        btnBooking_ThanhHung155.setBackground(new java.awt.Color(131, 184, 255));
+        btnBooking_ThanhHung155.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnBooking_ThanhHung155.setForeground(new java.awt.Color(255, 255, 255));
         btnBooking_ThanhHung155.setText("Booking");
-        btnBooking_ThanhHung155.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBooking_ThanhHung155.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBooking_ThanhHung155MouseClicked(evt);
+        btnBooking_ThanhHung155.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBooking_ThanhHung155ActionPerformed(evt);
             }
         });
 
@@ -163,82 +212,93 @@ public class BookingRoom extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBooking_ThanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(valueNbG_thanhHung155, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                        .addComponent(btnBooking_ThanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelRvD_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(reservationDate_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(labelCheckInDate_thanhHung155, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(labelRates_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(labelRT_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(labelRN_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
-                                .addComponent(labelNumberOfBed_thanhHung155)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(valueNumberOfBed_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(valueRates_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(labelRN_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                                .addComponent(valueRoomNumber_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelNumberOfBed_thanhHung156, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                    .addComponent(labelRates_thanhHung156))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(valueRoomNumber_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(valueRoomType_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 349, Short.MAX_VALUE)
-                                .addComponent(btnBackUserScr_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(160, 160, 160))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(valueRates_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(valueNumberOfBed_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(27, 27, 27)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBackUserScr_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelRvD_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reservationDate_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(499, 499, 499))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelRT_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(valueRoomType_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtDate1)
+                                    .addComponent(labelCheckInDate_thanhHung156, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                .addComponent(valueNbG_thanhHung155)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(valueRoomNumber_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                    .addComponent(labelRN_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelRT_thanhHung155)
-                            .addComponent(valueRoomType_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnBackUserScr_thanhHung155)))
+                    .addComponent(valueRoomNumber_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelRN_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBackUserScr_thanhHung155))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRates_thanhHung155)
-                    .addComponent(valueRates_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelRT_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valueRoomType_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelRates_thanhHung156, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valueRates_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNumberOfBed_thanhHung155)
-                    .addComponent(valueNumberOfBed_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(valueNumberOfBed_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelNumberOfBed_thanhHung156, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(labelCheckInDate_thanhHung155)
-                .addGap(18, 18, 18)
+                .addComponent(labelCheckInDate_thanhHung156, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(valueNbG_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRvD_thanhHung155)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelRvD_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reservationDate_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnBooking_ThanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(btnBooking_ThanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -253,7 +313,43 @@ public class BookingRoom extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnBackUserScr_thanhHung155MouseClicked
 
-    private void btnBooking_ThanhHung155MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBooking_ThanhHung155MouseClicked
+    private void txtDate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDate1ActionPerformed
+
+    private void txtDate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDate1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDate1MouseClicked
+
+    private void labelRN_thanhHung155ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelRN_thanhHung155ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelRN_thanhHung155ActionPerformed
+
+    private void labelRT_thanhHung155ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelRT_thanhHung155ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelRT_thanhHung155ActionPerformed
+
+    private void labelRates_thanhHung156ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelRates_thanhHung156ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelRates_thanhHung156ActionPerformed
+
+    private void labelNumberOfBed_thanhHung156ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelNumberOfBed_thanhHung156ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelNumberOfBed_thanhHung156ActionPerformed
+
+    private void labelCheckInDate_thanhHung156ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelCheckInDate_thanhHung156ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelCheckInDate_thanhHung156ActionPerformed
+
+    private void jLabel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabel3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3ActionPerformed
+
+    private void labelRvD_thanhHung155ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelRvD_thanhHung155ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelRvD_thanhHung155ActionPerformed
+
+    private void btnBooking_ThanhHung155ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBooking_ThanhHung155ActionPerformed
         SelectedDate d = dateChooser.getSelectedDate();
         String checkIn = d.getDay() + "-" + d.getMonth() + "-" + d.getYear();
         try {
@@ -270,15 +366,7 @@ public class BookingRoom extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(BookingRoom.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnBooking_ThanhHung155MouseClicked
-
-    private void txtDate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDate1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDate1ActionPerformed
-
-    private void txtDate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDate1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDate1MouseClicked
+    }//GEN-LAST:event_btnBooking_ThanhHung155ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,16 +408,17 @@ public class BookingRoom extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnBackUserScr_thanhHung155;
-    private javax.swing.JLabel btnBooking_ThanhHung155;
+    private javax.swing.JButton btnBooking_ThanhHung155;
     private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel labelCheckInDate_thanhHung155;
-    private javax.swing.JLabel labelNumberOfBed_thanhHung155;
-    private javax.swing.JLabel labelRN_thanhHung155;
-    private javax.swing.JLabel labelRT_thanhHung155;
-    private javax.swing.JLabel labelRates_thanhHung155;
-    private javax.swing.JLabel labelRvD_thanhHung155;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jLabel3;
+    private javax.swing.JTextField labelCheckInDate_thanhHung156;
+    private javax.swing.JTextField labelNumberOfBed_thanhHung156;
+    private javax.swing.JTextField labelRN_thanhHung155;
+    private javax.swing.JTextField labelRT_thanhHung155;
+    private javax.swing.JTextField labelRates_thanhHung156;
+    private javax.swing.JTextField labelRvD_thanhHung155;
     private javax.swing.JLabel reservationDate_thanhHung155;
     private javax.swing.JTextField txtDate1;
     private javax.swing.JTextField valueNbG_thanhHung155;
