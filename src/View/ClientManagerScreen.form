@@ -266,6 +266,9 @@
             <Property name="mnemonic" type="int" value="68"/>
             <Property name="text" type="java.lang.String" value="Delelte"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

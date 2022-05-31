@@ -5,22 +5,24 @@
  */
 package View;
 
+import Service.UserService;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Kiet
  */
 public class ClientManagerScreen extends javax.swing.JPanel {
-
+    UserService userService;
     /**
      * Creates new form ClientManagerScreen
      */
     public ClientManagerScreen() {
         initComponents();
-        
+        userService = new UserService();
         UserTable.getTableHeader().setBackground(new Color(131, 184, 255));
         UserTable.getTableHeader().setForeground(new Color(255, 255, 255));
         UserTable.getTableHeader().setPreferredSize(new Dimension(35, 35));
@@ -80,7 +82,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 183, Short.MAX_VALUE)
+            .addGap(0, 181, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,11 +100,11 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 198, Short.MAX_VALUE)
+            .addGap(0, 196, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 66, Short.MAX_VALUE)
         );
 
         AddButton.setBackground(new java.awt.Color(36, 139, 214));
@@ -125,6 +127,11 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setMnemonic('D');
         jButton3.setText("Delelte");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,6 +201,17 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         AddNewUser addUser = new AddNewUser();
         addUser.setVisible(true);
     }//GEN-LAST:event_AddButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int row = UserTable.getSelectedRow();
+        if(row ==-1)
+            JOptionPane.showMessageDialog(this, "Hãy chọn đối tượng", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        else{
+            int id = Integer.parseInt(String.valueOf(UserTable.getValueAt(row, 0)));
+            userService.deleteUser(id);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
