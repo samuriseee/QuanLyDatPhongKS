@@ -11,6 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Model.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,13 +28,32 @@ public class UserDAO {
         db = new JDBCgetConnection();
     }
 
-    /*
-    
-        This package is for interaction with database !!
-
-        write logic , method ... interactive with database in here ^^
-    
-     */
+    public void addUser(User user){
+        PreparedStatement ps;
+        try {
+            ps = db.getConnection().prepareStatement("Insert into _User(idRole ,FirstName , lastName ,PhoneNumber ,email ,passwordd) values(?,?,?,?,?,?)");
+            int rs = ps.executeUpdate();
+            if(rs == 1)
+                System.out.println("Insert successful");
+            else
+                System.out.println("ERROR");
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    public void deleteUser(int id){
+        try{
+            PreparedStatement ps = db.getConnection().prepareStatement("Delete from _User where id = ?");
+            ps.setInt(1, id);
+            int rs = ps.executeUpdate();
+            if(rs == 1)
+                System.out.println("Delete successful");
+            else
+                System.out.println("ERROR");
+        }
+        catch(Exception e){}
+    }
 
     public User getUser(String email) throws SQLException {
         Statement stm = db.getConnection().createStatement();
