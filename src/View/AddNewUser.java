@@ -5,6 +5,9 @@
  */
 package View;
 
+import Model.User;
+import Service.UserService;
+
 /**
  *
  * @author Kiet
@@ -14,8 +17,10 @@ public class AddNewUser extends javax.swing.JPanel {
     /**
      * Creates new form AddNewUser
      */
+    UserService userService;
     public AddNewUser() {
         initComponents();
+        userService = new UserService();
     }
 
     /**
@@ -29,13 +34,13 @@ public class AddNewUser extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Bt_Add_CTuanKiet206 = new javax.swing.JButton();
-        Bt_Black_CTuanKiet206 = new javax.swing.JButton();
-        roomNumber = new javax.swing.JTextField();
-        Price = new javax.swing.JTextField();
-        roomNumber1 = new javax.swing.JTextField();
-        Price1 = new javax.swing.JTextField();
-        Price2 = new javax.swing.JTextField();
+        Bt_Add_khoa15 = new javax.swing.JButton();
+        Bt_Black_khoa15 = new javax.swing.JButton();
+        lastName_khoa15 = new javax.swing.JTextField();
+        email_khoa15 = new javax.swing.JTextField();
+        firstName_khoa15 = new javax.swing.JTextField();
+        phone_khoa15 = new javax.swing.JTextField();
+        pass_khoa15 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(236, 247, 253));
 
@@ -56,57 +61,57 @@ public class AddNewUser extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(36, 139, 214));
         jLabel1.setText("Create new user");
 
-        Bt_Add_CTuanKiet206.setBackground(new java.awt.Color(131, 184, 255));
-        Bt_Add_CTuanKiet206.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        Bt_Add_CTuanKiet206.setForeground(new java.awt.Color(255, 255, 255));
-        Bt_Add_CTuanKiet206.setText("Add");
-        Bt_Add_CTuanKiet206.setMaximumSize(new java.awt.Dimension(72, 27));
-        Bt_Add_CTuanKiet206.setMinimumSize(new java.awt.Dimension(72, 27));
-        Bt_Add_CTuanKiet206.addActionListener(new java.awt.event.ActionListener() {
+        Bt_Add_khoa15.setBackground(new java.awt.Color(131, 184, 255));
+        Bt_Add_khoa15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Bt_Add_khoa15.setForeground(new java.awt.Color(255, 255, 255));
+        Bt_Add_khoa15.setText("Add");
+        Bt_Add_khoa15.setMaximumSize(new java.awt.Dimension(72, 27));
+        Bt_Add_khoa15.setMinimumSize(new java.awt.Dimension(72, 27));
+        Bt_Add_khoa15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bt_Add_CTuanKiet206ActionPerformed(evt);
+                Bt_Add_khoa15ActionPerformed(evt);
             }
         });
 
-        Bt_Black_CTuanKiet206.setBackground(new java.awt.Color(211, 71, 71));
-        Bt_Black_CTuanKiet206.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        Bt_Black_CTuanKiet206.setForeground(new java.awt.Color(255, 255, 255));
-        Bt_Black_CTuanKiet206.setText("Back");
-        Bt_Black_CTuanKiet206.setMaximumSize(new java.awt.Dimension(72, 27));
-        Bt_Black_CTuanKiet206.setMinimumSize(new java.awt.Dimension(72, 27));
-        Bt_Black_CTuanKiet206.addActionListener(new java.awt.event.ActionListener() {
+        Bt_Black_khoa15.setBackground(new java.awt.Color(211, 71, 71));
+        Bt_Black_khoa15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Bt_Black_khoa15.setForeground(new java.awt.Color(255, 255, 255));
+        Bt_Black_khoa15.setText("Back");
+        Bt_Black_khoa15.setMaximumSize(new java.awt.Dimension(72, 27));
+        Bt_Black_khoa15.setMinimumSize(new java.awt.Dimension(72, 27));
+        Bt_Black_khoa15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bt_Black_CTuanKiet206ActionPerformed(evt);
+                Bt_Black_khoa15ActionPerformed(evt);
             }
         });
 
-        roomNumber.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        roomNumber.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LastName", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        lastName_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lastName_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LastName", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
 
-        Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Price.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
-        Price.addActionListener(new java.awt.event.ActionListener() {
+        email_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        email_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        email_khoa15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PriceActionPerformed(evt);
+                email_khoa15ActionPerformed(evt);
             }
         });
 
-        roomNumber1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        roomNumber1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "First Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        firstName_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        firstName_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "First Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
 
-        Price1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Price1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
-        Price1.addActionListener(new java.awt.event.ActionListener() {
+        phone_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        phone_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        phone_khoa15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Price1ActionPerformed(evt);
+                phone_khoa15ActionPerformed(evt);
             }
         });
 
-        Price2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Price2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pass", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
-        Price2.addActionListener(new java.awt.event.ActionListener() {
+        pass_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pass_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pass", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        pass_khoa15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Price2ActionPerformed(evt);
+                pass_khoa15ActionPerformed(evt);
             }
         });
 
@@ -124,17 +129,17 @@ public class AddNewUser extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Bt_Black_CTuanKiet206, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bt_Black_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Bt_Add_CTuanKiet206, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Bt_Add_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Price)
+                                .addComponent(email_khoa15)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(roomNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(firstName_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(roomNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
-                                .addComponent(Price1)
-                                .addComponent(Price2)))
+                                    .addComponent(lastName_khoa15, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                                .addComponent(phone_khoa15)
+                                .addComponent(pass_khoa15)))
                         .addGap(80, 80, 80))))
         );
         layout.setVerticalGroup(
@@ -145,53 +150,60 @@ public class AddNewUser extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(roomNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(roomNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(firstName_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lastName_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Price1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(phone_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
-                .addComponent(Price, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(email_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Price2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pass_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Bt_Add_CTuanKiet206, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bt_Black_CTuanKiet206, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bt_Add_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bt_Black_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Bt_Add_CTuanKiet206ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Add_CTuanKiet206ActionPerformed
-
-    }//GEN-LAST:event_Bt_Add_CTuanKiet206ActionPerformed
-
-    private void Bt_Black_CTuanKiet206ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Black_CTuanKiet206ActionPerformed
-
-
-    }//GEN-LAST:event_Bt_Black_CTuanKiet206ActionPerformed
-
-    private void PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PriceActionPerformed
+    private void Bt_Add_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Add_khoa15ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PriceActionPerformed
+        User user = new User();
+        user.setFirstName(firstName_khoa15.getText());
+        user.setLastName(lastName_khoa15.getText());
+        user.setPhoneNumber(phone_khoa15.getText());
+        user.setEmail(email_khoa15.getText());
+        user.setPassword(pass_khoa15.getText());
+        userService.addUser(user);
+    }//GEN-LAST:event_Bt_Add_khoa15ActionPerformed
 
-    private void Price1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Price1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Price1ActionPerformed
+    private void Bt_Black_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Black_khoa15ActionPerformed
+          new AdminScreen().setVisible(true);
 
-    private void Price2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Price2ActionPerformed
+    }//GEN-LAST:event_Bt_Black_khoa15ActionPerformed
+
+    private void email_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_khoa15ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Price2ActionPerformed
+    }//GEN-LAST:event_email_khoa15ActionPerformed
+
+    private void phone_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phone_khoa15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phone_khoa15ActionPerformed
+
+    private void pass_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass_khoa15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pass_khoa15ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bt_Add_CTuanKiet206;
-    private javax.swing.JButton Bt_Black_CTuanKiet206;
-    private javax.swing.JTextField Price;
-    private javax.swing.JTextField Price1;
-    private javax.swing.JTextField Price2;
+    private javax.swing.JButton Bt_Add_khoa15;
+    private javax.swing.JButton Bt_Black_khoa15;
+    private javax.swing.JTextField email_khoa15;
+    private javax.swing.JTextField firstName_khoa15;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField roomNumber;
-    private javax.swing.JTextField roomNumber1;
+    private javax.swing.JTextField lastName_khoa15;
+    private javax.swing.JTextField pass_khoa15;
+    private javax.swing.JTextField phone_khoa15;
     // End of variables declaration//GEN-END:variables
 }

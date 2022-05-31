@@ -24,7 +24,12 @@ public class UserService {
         userDao = new UserDAO();
         roomsDAO = new RoomsDAO();
     }
-
+    public void addUser(User user){
+        userDao.addUser(user);
+    }
+    public void deleteUser(int id ){
+        userDao.deleteUser(id);
+    }
     /*
         write the logic you want to do with the data returned from the server ^^
      */

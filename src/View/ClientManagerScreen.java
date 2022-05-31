@@ -194,7 +194,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         AddNewUser addUser = new AddNewUser();
         addUser.setVisible(true);
     }//GEN-LAST:event_AddButtonActionPerformed
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButton;

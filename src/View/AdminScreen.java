@@ -24,6 +24,7 @@ public class AdminScreen extends javax.swing.JFrame {
     /**
      * Creates new form AdminScreen
      */
+    public AdminScreen(){}
     public AdminScreen(User user_TuanKiet05) {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,10 +39,6 @@ public class AdminScreen extends javax.swing.JFrame {
         labelNameAdmin.setText(user_TuanKiet05.getFirstName() + " " + user_TuanKiet05.getLastName());
         this.pack();
         this.setLocationRelativeTo(null);
-    }
-
-    private AdminScreen() {
-        
     }
 
     /**

@@ -32,19 +32,19 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="Bt_Black_CTuanKiet206" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="Bt_Black_khoa15" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="Bt_Add_CTuanKiet206" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="Bt_Add_khoa15" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Price" alignment="0" max="32767" attributes="0"/>
+                              <Component id="email_khoa15" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="roomNumber1" min="-2" pref="157" max="-2" attributes="0"/>
+                                  <Component id="firstName_khoa15" min="-2" pref="157" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="roomNumber" pref="155" max="32767" attributes="0"/>
+                                  <Component id="lastName_khoa15" pref="155" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="Price1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Price2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="phone_khoa15" alignment="0" max="32767" attributes="0"/>
+                              <Component id="pass_khoa15" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
@@ -61,19 +61,19 @@
               <Component id="jLabel1" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="roomNumber1" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                  <Component id="roomNumber" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="firstName_khoa15" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="lastName_khoa15" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="Price1" min="-2" pref="46" max="-2" attributes="0"/>
+              <Component id="phone_khoa15" min="-2" pref="46" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="Price" min="-2" pref="46" max="-2" attributes="0"/>
+              <Component id="email_khoa15" min="-2" pref="46" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="Price2" min="-2" pref="46" max="-2" attributes="0"/>
+              <Component id="pass_khoa15" min="-2" pref="46" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Bt_Add_CTuanKiet206" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="Bt_Black_CTuanKiet206" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="Bt_Add_khoa15" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="Bt_Black_khoa15" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
@@ -112,7 +112,7 @@
         <Property name="text" type="java.lang.String" value="Create new user"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="Bt_Add_CTuanKiet206">
+    <Component class="javax.swing.JButton" name="Bt_Add_khoa15">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="b8" red="83" type="rgb"/>
@@ -132,10 +132,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bt_Add_CTuanKiet206ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bt_Add_khoa15ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Bt_Black_CTuanKiet206">
+    <Component class="javax.swing.JButton" name="Bt_Black_khoa15">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="47" green="47" red="d3" type="rgb"/>
@@ -155,10 +155,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bt_Black_CTuanKiet206ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bt_Black_khoa15ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="roomNumber">
+    <Component class="javax.swing.JTextField" name="lastName_khoa15">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="0"/>
@@ -173,7 +173,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="Price">
+    <Component class="javax.swing.JTextField" name="email_khoa15">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="0"/>
@@ -188,10 +188,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PriceActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="email_khoa15ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="roomNumber1">
+    <Component class="javax.swing.JTextField" name="firstName_khoa15">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="0"/>
@@ -206,7 +206,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="Price1">
+    <Component class="javax.swing.JTextField" name="phone_khoa15">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="0"/>
@@ -221,10 +221,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Price1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="phone_khoa15ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Price2">
+    <Component class="javax.swing.JTextField" name="pass_khoa15">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="0"/>
@@ -239,7 +239,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Price2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pass_khoa15ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Model.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,7 +33,37 @@ public class UserDAO {
         write logic , method ... interactive with database in here ^^
     
      */
-
+    public void addUser(User user){
+        PreparedStatement ps;
+        try {
+            ps = db.getConnection().prepareStatement("Insert into _User(FirstName , lastName ,PhoneNumber ,email ,passwordd) values(?,?,?,?,?)");
+            ps.setString(1, user.getFirstName());
+            ps.setString(2, user.getLastName());
+            ps.setString(3,user.getPhoneNumber());
+            ps.setString(4, user.getEmail());
+            ps.setString(5, user.getPassword());
+            int rs = ps.executeUpdate();
+            if(rs == 1)
+                System.out.println("Insert successful");
+            else
+                System.out.println("ERROR");
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    public void deleteUser(int id){
+        try{
+            PreparedStatement ps = db.getConnection().prepareStatement("Delete from _User where id = ?");
+            ps.setInt(1, id);
+            int rs = ps.executeUpdate();
+            if(rs == 1)
+                System.out.println("Delete successful");
+            else
+                System.out.println("ERROR");
+        }
+        catch(Exception e){}
+    }
     public User getUser(String email) throws SQLException {
         Statement stm = db.getConnection().createStatement();
         ResultSet resultSet = null;
