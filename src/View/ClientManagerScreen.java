@@ -13,8 +13,12 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -49,6 +53,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         UserTable.getTableHeader().setForeground(new Color(255, 255, 255));
         UserTable.getTableHeader().setPreferredSize(new Dimension(35, 35));
         UserTable.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
+        totalUser_thanhHung155.setText(Integer.toString(listUser_thanhHung155.size()));
     }
 
     /**
@@ -65,7 +70,8 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         UserTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        totalUser_thanhHung155 = new javax.swing.JLabel();
+        valueSearch_thanhHung155 = new javax.swing.JTextField();
         AddButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -104,19 +110,33 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Total User", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(36, 139, 214))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(242, 100));
 
+        totalUser_thanhHung155.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        totalUser_thanhHung155.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 183, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(totalUser_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 67, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(totalUser_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jTextField1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        valueSearch_thanhHung155.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        valueSearch_thanhHung155.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        valueSearch_thanhHung155.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                valueSearch_thanhHung155KeyReleased(evt);
+            }
+        });
 
         AddButton.setBackground(new java.awt.Color(36, 139, 214));
         AddButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -159,7 +179,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(valueSearch_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(155, 155, 155)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -182,7 +202,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(valueSearch_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 65, Short.MAX_VALUE)
                         .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,7 +229,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
 
-        AddUserScreen addUser = new AddUserScreen();
+        AddUserScreen addUser = new AddUserScreen(UserTable , listUser_thanhHung155 , totalUser_thanhHung155);
         addUser.setVisible(true);
     }//GEN-LAST:event_AddButtonActionPerformed
 
@@ -220,6 +240,15 @@ public class ClientManagerScreen extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Hãy chọn User muon xoa", "Error", JOptionPane.ERROR_MESSAGE);
         }
         userService.deleteUser(idUser_khoa15);
+        try {
+            listUser_thanhHung155 = userService.getAllUser();
+            setTable(listUser_thanhHung155);
+            totalUser_thanhHung155.setText(Integer.toString(listUser_thanhHung155.size()));
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -231,6 +260,16 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         idUser_khoa15 = Integer.parseInt(getModelTable().getValueAt(selectedRow, 0).toString());
         
     }//GEN-LAST:event_UserTableMouseClicked
+
+    public void searchTable(String value) {
+        TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(getModelTable());
+        UserTable.setRowSorter(trs);
+        trs.setRowFilter(RowFilter.regexFilter(value));
+    }
+    
+    private void valueSearch_thanhHung155KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valueSearch_thanhHung155KeyReleased
+        searchTable(valueSearch_thanhHung155.getText());
+    }//GEN-LAST:event_valueSearch_thanhHung155KeyReleased
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -242,6 +281,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel totalUser_thanhHung155;
+    private javax.swing.JTextField valueSearch_thanhHung155;
     // End of variables declaration//GEN-END:variables
 }
