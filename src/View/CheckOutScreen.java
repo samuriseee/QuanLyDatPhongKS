@@ -118,6 +118,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        backButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         bill = new javax.swing.JTextArea();
 
@@ -163,6 +164,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("Make a payment");
+        jButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
@@ -173,6 +175,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
         jButton14.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jButton14.setForeground(new java.awt.Color(255, 255, 255));
         jButton14.setText("Print invoice");
+        jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -180,6 +183,19 @@ public class CheckOutScreen extends javax.swing.JFrame {
         });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/checkout2.png"))); // NOI18N
+
+        backButton.setBackground(new java.awt.Color(211, 71, 71));
+        backButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
+        backButton.setText("Back");
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton.setMaximumSize(new java.awt.Dimension(72, 27));
+        backButton.setMinimumSize(new java.awt.Dimension(72, 27));
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -209,7 +225,8 @@ public class CheckOutScreen extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(0, 74, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton14)))
                 .addContainerGap())
         );
@@ -239,7 +256,9 @@ public class CheckOutScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -310,6 +329,17 @@ public class CheckOutScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TooActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        this.setVisible(false);
+        ReservationManagerScreen ReserMa_TuanKiet05;
+        try {
+            ReserMa_TuanKiet05 = new ReservationManagerScreen();
+            ReserMa_TuanKiet05.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddNewRoomScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_backButtonActionPerformed
+
     public static void main(String args[]) throws UnsupportedLookAndFeelException {
         UIManager.setLookAndFeel(new FlatLightLaf());
         
@@ -323,6 +353,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
     private javax.swing.JTextField Bal;
     private javax.swing.JTextField Cash;
     private javax.swing.JTextField Too;
+    private javax.swing.JButton backButton;
     private javax.swing.JTextArea bill;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;

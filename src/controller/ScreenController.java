@@ -33,7 +33,7 @@ public class ScreenController {
         this.root_TuanKiet05 = jpnroot;
     }
     
-    public void setView (JPanel jpnItem, JLabel jlbItem) {
+    public void setView (JPanel jpnItem, JLabel jlbItem) throws SQLException {
         kindSelected = "NguoiDung";
         
         jpnItem.setBackground(new Color(36,139,214));
@@ -72,8 +72,15 @@ public class ScreenController {
         public void mouseClicked (MouseEvent e) {
             switch(kind) {
                 case "NguoiDung":
-                    node = new ClientManagerScreen();
+                {
+                    try {
+                        node = new ClientManagerScreen();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ScreenController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
+
                 case "Phong":
                 {
                     try {
@@ -95,8 +102,15 @@ public class ScreenController {
                     break;
 
                 default:
-                    node = new ClientManagerScreen();
+                {
+                    try {
+                        node = new ClientManagerScreen();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ScreenController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
+
             }
             root_TuanKiet05.removeAll();
             root_TuanKiet05.setLayout(new BorderLayout());
