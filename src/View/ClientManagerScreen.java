@@ -94,6 +94,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
             }
         ));
         UserTable.setToolTipText("");
+        UserTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         UserTable.setRowHeight(35);
         UserTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,7 +108,7 @@ public class ClientManagerScreen extends javax.swing.JPanel {
         jLabel1.setText("User Management");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Total User", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(36, 139, 214))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Total User", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(36, 139, 214))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(242, 100));
 
         totalUser_thanhHung155.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
