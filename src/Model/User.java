@@ -22,11 +22,7 @@ public class User {
         this.password = password;
         this.idRole = idRole ;
     }
-
-    public User() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     public int getUserId() {
         return UserId;
     }

@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Model.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,15 +34,15 @@ public class UserDAO {
         write logic , method ... interactive with database in here ^^
     
      */
-    public void addUser(User user){
+    public void addUser(String firstName , String lastName , String phoneNumber , String email , String passWord){
         PreparedStatement ps;
         try {
             ps = db.getConnection().prepareStatement("Insert into _User(FirstName , lastName ,PhoneNumber ,email ,passwordd) values(?,?,?,?,?)");
-            ps.setString(1, user.getFirstName());
-            ps.setString(2, user.getLastName());
-            ps.setString(3,user.getPhoneNumber());
-            ps.setString(4, user.getEmail());
-            ps.setString(5, user.getPassword());
+            ps.setString(1, firstName);
+            ps.setString(2, lastName);
+            ps.setString(3, phoneNumber);
+            ps.setString(4, email);
+            ps.setString(5, passWord);
             int rs = ps.executeUpdate();
             if(rs == 1)
                 System.out.println("Insert successful");
@@ -53,14 +54,11 @@ public class UserDAO {
         
     }
     public void deleteUser(int id){
+        System.out.println(id);
         try{
-            PreparedStatement ps = db.getConnection().prepareStatement("Delete from _User where id = ?");
+            PreparedStatement ps = db.getConnection().prepareStatement("Delete from _User where UserId = ?");
             ps.setInt(1, id);
-            int rs = ps.executeUpdate();
-            if(rs == 1)
-                System.out.println("Delete successful");
-            else
-                System.out.println("ERROR");
+            ps.executeUpdate();
         }
         catch(Exception e){}
     }
@@ -120,5 +118,16 @@ public class UserDAO {
         return user;
     }
     
+    public ArrayList<User> getAllUser() throws SQLException{
+        ArrayList<User> users = new ArrayList<User>();
+        Statement stm = db.getConnection().createStatement();
+        ResultSet resultSet = null;
+        String query = "Select * from _User where idRole = 'DFUser'";
+        resultSet = stm.executeQuery(query);
+        while(resultSet.next()){
+            users.add(new User(resultSet.getInt(1) , resultSet.getString(2) ,resultSet.getString(3) ,resultSet.getString(4) ,resultSet.getString(5) ,resultSet.getString(6) ,resultSet.getString(7)) );
+        }
+        return users;
+    }
 
 }

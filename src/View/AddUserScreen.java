@@ -4,21 +4,18 @@
  * and open the template in the editor.
  */
 package View;
-
 import Model.User;
 import Service.UserService;
-
+import javax.swing.JOptionPane;
 /**
  *
- * @author Kiet
  */
-public class AddNewUser extends javax.swing.JPanel {
-
-    /**
-     * Creates new form AddNewUser
-     */
+public class AddUserScreen extends javax.swing.JFrame {
     UserService userService;
-    public AddNewUser() {
+    /**
+     * Creates new form Add2
+     */
+    public AddUserScreen() {
         initComponents();
         userService = new UserService();
     }
@@ -40,9 +37,9 @@ public class AddNewUser extends javax.swing.JPanel {
         email_khoa15 = new javax.swing.JTextField();
         firstName_khoa15 = new javax.swing.JTextField();
         phone_khoa15 = new javax.swing.JTextField();
-        pass_khoa15 = new javax.swing.JTextField();
+        pass_khoa15 = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(236, 247, 253));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(157, 199, 255));
 
@@ -50,11 +47,11 @@ public class AddNewUser extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 347, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGap(0, 496, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -86,10 +83,10 @@ public class AddNewUser extends javax.swing.JPanel {
         });
 
         lastName_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lastName_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LastName", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        lastName_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "LastName", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
 
         email_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        email_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        email_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
         email_khoa15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 email_khoa15ActionPerformed(evt);
@@ -97,49 +94,45 @@ public class AddNewUser extends javax.swing.JPanel {
         });
 
         firstName_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        firstName_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "First Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        firstName_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "First Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        firstName_khoa15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstName_khoa15ActionPerformed(evt);
+            }
+        });
 
         phone_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        phone_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        phone_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Phone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
         phone_khoa15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phone_khoa15ActionPerformed(evt);
             }
         });
 
-        pass_khoa15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        pass_khoa15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pass", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
-        pass_khoa15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pass_khoa15ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 87, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(98, 98, 98))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Bt_Black_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(Bt_Add_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(email_khoa15)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(firstName_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lastName_khoa15, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
-                                .addComponent(phone_khoa15)
-                                .addComponent(pass_khoa15)))
+                            .addComponent(email_khoa15, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(firstName_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lastName_khoa15, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                            .addComponent(phone_khoa15, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pass_khoa15, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(80, 80, 80))))
         );
         layout.setVerticalGroup(
@@ -156,30 +149,27 @@ public class AddNewUser extends javax.swing.JPanel {
                 .addComponent(phone_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(email_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pass_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pass_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bt_Add_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bt_Black_khoa15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Bt_Add_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Add_khoa15ActionPerformed
         // TODO add your handling code here:
-        User user = new User();
-        user.setFirstName(firstName_khoa15.getText());
-        user.setLastName(lastName_khoa15.getText());
-        user.setPhoneNumber(phone_khoa15.getText());
-        user.setEmail(email_khoa15.getText());
-        user.setPassword(pass_khoa15.getText());
-        userService.addUser(user);
+        userService.addUser(firstName_khoa15.getText(), lastName_khoa15.getText(), phone_khoa15.getText(), email_khoa15.getText(), new String(pass_khoa15.getPassword()));
+        JOptionPane.showMessageDialog(null, "Add New User Success", "", JOptionPane.INFORMATION_MESSAGE);
+        this.setVisible(false);
     }//GEN-LAST:event_Bt_Add_khoa15ActionPerformed
 
     private void Bt_Black_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_Black_khoa15ActionPerformed
-          new AdminScreen().setVisible(true);
-
+        this.setVisible(false);
     }//GEN-LAST:event_Bt_Black_khoa15ActionPerformed
 
     private void email_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_khoa15ActionPerformed
@@ -190,10 +180,45 @@ public class AddNewUser extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_phone_khoa15ActionPerformed
 
-    private void pass_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass_khoa15ActionPerformed
+    private void firstName_khoa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstName_khoa15ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pass_khoa15ActionPerformed
+    }//GEN-LAST:event_firstName_khoa15ActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AddUserScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AddUserScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AddUserScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AddUserScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AddUserScreen().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bt_Add_khoa15;
@@ -203,7 +228,7 @@ public class AddNewUser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField lastName_khoa15;
-    private javax.swing.JTextField pass_khoa15;
+    private javax.swing.JPasswordField pass_khoa15;
     private javax.swing.JTextField phone_khoa15;
     // End of variables declaration//GEN-END:variables
 }

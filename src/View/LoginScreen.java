@@ -105,6 +105,11 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel2.setText("Your password : ");
 
         valuePassword.setBackground(new java.awt.Color(230, 231, 230));
+        valuePassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valuePasswordActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(131, 184, 255));
 
@@ -278,6 +283,10 @@ public class LoginScreen extends javax.swing.JFrame {
         RegisterScreen rsc = new RegisterScreen();
         rsc.setVisible(true);
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void valuePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valuePasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valuePasswordActionPerformed
 
     /**
      * @param args the command line arguments
