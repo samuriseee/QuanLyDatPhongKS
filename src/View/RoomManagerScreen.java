@@ -87,7 +87,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "RoomNumber", "RoomType", "NumberOfBed", "Rates"
             }
         ));
         RoomTable_TuanKiet05.setRowHeight(35);
@@ -207,9 +207,8 @@ public class RoomManagerScreen extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
-        
-        
-        AddNewRoomScreen addRoom = new AddNewRoomScreen(RoomTable_TuanKiet05 ,arrRoom_TuanKiet05.getArrListRoom());
+                
+        AddNewRoomScreen addRoom = new AddNewRoomScreen(RoomTable_TuanKiet05 ,arrRoom_TuanKiet05.getArrListRoom() , totalRoom_thanhHung155);
         addRoom.setVisible(true);
         
     }//GEN-LAST:event_AddButtonActionPerformed

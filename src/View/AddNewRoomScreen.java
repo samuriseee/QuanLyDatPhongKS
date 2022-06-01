@@ -27,6 +27,7 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
     private RoomsService roomSer_TuanKiet05 = new RoomsService();
     private javax.swing.JTable tableRoomState_thanhHung155;
     private ArrayList<Room> cloneArrRoom_thanhHung155 ;
+    private javax.swing.JLabel cloneLabel_thanhHung155 ; 
     /**
      * Creates new form AddNewRoom2
      */
@@ -44,10 +45,11 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
     }
     
     
-    public AddNewRoomScreen(javax.swing.JTable table , ArrayList<Room> lrRoom) {
+    public AddNewRoomScreen(javax.swing.JTable table , ArrayList<Room> lrRoom , javax.swing.JLabel label) {
         initComponents();
         tableRoomState_thanhHung155 = table ;
         cloneArrRoom_thanhHung155 = lrRoom ;
+        cloneLabel_thanhHung155 = label ;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
@@ -227,6 +229,7 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Add new room success ","" , JOptionPane.INFORMATION_MESSAGE);
             cloneArrRoom_thanhHung155 = roomSer_TuanKiet05.getAllRooms();
             setTable(cloneArrRoom_thanhHung155);
+            cloneLabel_thanhHung155.setText(Integer.toString(cloneArrRoom_thanhHung155.size()));
             this.dispose();
         } catch (SQLException ex) {
             Logger.getLogger(AddNewRoomScreen.class.getName()).log(Level.SEVERE, null, ex);
