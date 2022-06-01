@@ -12,9 +12,11 @@ import Model.Room;
 import Service.RoomsService;
 import Service.UserService;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -23,11 +25,29 @@ import javax.swing.JOptionPane;
  */
 public class AddNewRoomScreen extends javax.swing.JFrame {
     private RoomsService roomSer_TuanKiet05 = new RoomsService();
+    private javax.swing.JTable tableRoomState_thanhHung155;
+    private ArrayList<Room> cloneArrRoom_thanhHung155 ;
     /**
      * Creates new form AddNewRoom2
      */
-    public AddNewRoomScreen() {
+    
+    public DefaultTableModel getModelTable() {
+        DefaultTableModel model = (DefaultTableModel) tableRoomState_thanhHung155.getModel();
+        return model;
+    }
+
+    public void setTable(ArrayList<Room> list) {
+        getModelTable().getDataVector().removeAllElements();
+        list.forEach((room) -> {
+            getModelTable().addRow(new Object[]{room.getRoomNumber(), room.getRoomType(), room.getRates(), room.getNumberOfBed(), room.isAvainable()});
+        });
+    }
+    
+    
+    public AddNewRoomScreen(javax.swing.JTable table , ArrayList<Room> lrRoom) {
         initComponents();
+        tableRoomState_thanhHung155 = table ;
+        cloneArrRoom_thanhHung155 = lrRoom ;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
@@ -185,6 +205,8 @@ public class AddNewRoomScreen extends javax.swing.JFrame {
         try {
             roomSer_TuanKiet05.addNewRoom(Integer.parseInt(roomNumber.getText()) , roomTypeCB.getSelectedItem().toString() , Double.parseDouble(Price.getText()) , Integer.parseInt(NumberOfBedCB.getSelectedItem().toString()),true);
             JOptionPane.showMessageDialog(this, "Add new room success ","" , JOptionPane.INFORMATION_MESSAGE);
+            cloneArrRoom_thanhHung155 = roomSer_TuanKiet05.getAllRooms();
+            setTable(cloneArrRoom_thanhHung155);
             this.dispose();
         } catch (SQLException ex) {
             Logger.getLogger(AddNewRoomScreen.class.getName()).log(Level.SEVERE, null, ex);

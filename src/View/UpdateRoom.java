@@ -13,9 +13,11 @@ import Model.ListRoom;
 import Service.RoomsService;
 import Service.UserService;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,11 +28,25 @@ public class UpdateRoom extends javax.swing.JFrame {
     private RoomsService roomSer_TuanKiet05 = new RoomsService();
     private Room room_TuanKiet05;
     int oldRoomNumber_TuanKiet05;
+    private javax.swing.JTable tableRoomUpState_thanhHung155;
+    private ArrayList<Room> cloneArrUpRoom_thanhHung155 ;
+    
+    public DefaultTableModel getModelTable() {
+        DefaultTableModel model = (DefaultTableModel) tableRoomUpState_thanhHung155.getModel();
+        return model;
+    }
 
+    public void setTable(ArrayList<Room> list) {
+        getModelTable().getDataVector().removeAllElements();
+        list.forEach((room) -> {
+            getModelTable().addRow(new Object[]{room.getRoomNumber(), room.getRoomType(), room.getRates(), room.getNumberOfBed(), room.isAvainable()});
+        });
+    }
+    
     /**
      * Creates new form UpdateRoom
      */
-    public UpdateRoom(Room room) {
+    public UpdateRoom(Room room , javax.swing.JTable table , ArrayList<Room> lrRoom) {
         initComponents();
         oldRoomNumber_TuanKiet05 = room.getRoomNumber();
         roomNumber.setText(String.valueOf(room.getRoomNumber()));
@@ -38,6 +54,8 @@ public class UpdateRoom extends javax.swing.JFrame {
         NumberOfBedCB.setSelectedItem(String.valueOf(room.getNumberOfBed()));
         roomTypeCB.setSelectedItem(room.getRoomType());
         roomStatus.setSelectedItem(room.isAvainable());
+        tableRoomUpState_thanhHung155 = table ;
+        cloneArrUpRoom_thanhHung155 = lrRoom ;
         this.setLocationRelativeTo(null);
     }
 
@@ -216,6 +234,8 @@ public class UpdateRoom extends javax.swing.JFrame {
             
             roomSer_TuanKiet05.updateRoom(Integer.parseInt(roomNumber.getText()), roomTypeCB.getSelectedItem().toString(), Double.parseDouble(Price.getText()), Integer.parseInt(NumberOfBedCB.getSelectedItem().toString()), Boolean.parseBoolean(roomStatus.getSelectedItem().toString()),oldRoomNumber_TuanKiet05);
             JOptionPane.showMessageDialog(this, "Update room success ", "", JOptionPane.INFORMATION_MESSAGE);
+            cloneArrUpRoom_thanhHung155 = roomSer_TuanKiet05.getAllRooms();
+            setTable(cloneArrUpRoom_thanhHung155);
             this.setVisible(false);
             RoomManagerScreen RoomMa = new RoomManagerScreen();
             RoomMa.setVisible(true);

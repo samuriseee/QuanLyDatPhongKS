@@ -51,6 +51,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
         RoomTable_TuanKiet05.getTableHeader().setForeground(new Color(255, 255, 255));
         RoomTable_TuanKiet05.getTableHeader().setPreferredSize(new Dimension(35, 35));
         RoomTable_TuanKiet05.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
+        totalRoom_thanhHung155.setText(Integer.toString(arrRoom_TuanKiet05.getArrListRoom().size()));
     }
 
     /**
@@ -70,7 +71,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
         editButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        totalRoom_thanhHung155 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 247, 253));
 
@@ -98,7 +99,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
 
         SearchInput.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         SearchInput.setForeground(new java.awt.Color(0, 0, 0));
-        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
+        SearchInput.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 15), new java.awt.Color(36, 139, 214))); // NOI18N
         SearchInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SearchInputKeyReleased(evt);
@@ -136,31 +137,26 @@ public class RoomManagerScreen extends javax.swing.JPanel {
         });
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Total Room", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(36, 139, 214))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Total Room", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(36, 139, 214))); // NOI18N
+
+        totalRoom_thanhHung155.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        totalRoom_thanhHung155.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 264, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(totalRoom_thanhHung155, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Total Room", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(36, 139, 214))); // NOI18N
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 242, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 64, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(totalRoom_thanhHung155, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -174,10 +170,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(SearchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(84, 84, 84)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -197,9 +190,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15)
                         .addComponent(SearchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -217,7 +208,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
         
         
-        AddNewRoomScreen addRoom = new AddNewRoomScreen();
+        AddNewRoomScreen addRoom = new AddNewRoomScreen(RoomTable_TuanKiet05 ,arrRoom_TuanKiet05.getArrListRoom());
         addRoom.setVisible(true);
         
     }//GEN-LAST:event_AddButtonActionPerformed
@@ -238,7 +229,6 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                 } catch (SQLException ex) {
                     Logger.getLogger(RoomManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
@@ -261,7 +251,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
             
             try {
                 Room RoomNeedUpdated = roomService_TuanKiet05.getRoomByRoomNumber(roomNumber);
-                UpdateRoom screenUpdate = new UpdateRoom(RoomNeedUpdated);
+                UpdateRoom screenUpdate = new UpdateRoom(RoomNeedUpdated , RoomTable_TuanKiet05 , arrRoom_TuanKiet05.getArrListRoom());
                 screenUpdate.setVisible(true);
             } catch (SQLException ex) {
                 Logger.getLogger(RoomManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
@@ -278,7 +268,7 @@ public class RoomManagerScreen extends javax.swing.JPanel {
     private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel totalRoom_thanhHung155;
     // End of variables declaration//GEN-END:variables
 }
