@@ -22,7 +22,7 @@ public class User {
         this.password = password;
         this.idRole = idRole ;
     }
-
+    
     public int getUserId() {
         return UserId;
     }
@@ -50,5 +50,35 @@ public class User {
     public String getIdRole() {
         return idRole;
     }
+
+    public void setUserId(int UserId) {
+        this.UserId = UserId;
+    }
+
+    public void setFirstName(String FirstName) {
+        this.FirstName = FirstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setIdRole(String idRole) {
+        this.idRole = idRole;
+    }
+
+    
     
 }

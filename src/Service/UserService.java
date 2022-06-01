@@ -24,7 +24,12 @@ public class UserService {
         userDao = new UserDAO();
         roomsDAO = new RoomsDAO();
     }
-
+    public void addUser(String firstName , String lastName , String phoneNumber , String email , String passWord){
+        userDao.addUser( firstName ,  lastName ,  phoneNumber ,  email ,  passWord);
+    }
+    public void deleteUser(int id ){
+        userDao.deleteUser(id);
+    }
     /*
         write the logic you want to do with the data returned from the server ^^
      */
@@ -59,5 +64,8 @@ public class UserService {
     
     public void bookingRom(int customerId, int roomNumber, String checkInDate, int numberOfGuests, String reservationDate) throws SQLException {
         userDao.bookingRom(customerId, roomNumber, checkInDate, numberOfGuests, reservationDate);
+    }
+    public ArrayList<User> getAllUser() throws SQLException{
+        return userDao.getAllUser();
     }
 }
