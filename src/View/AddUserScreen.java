@@ -4,21 +4,49 @@
  * and open the template in the editor.
  */
 package View;
+
+import Model.ListRoom;
+import Model.Room;
 import Model.User;
 import Service.UserService;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  */
 public class AddUserScreen extends javax.swing.JFrame {
+
     UserService userService;
+    private javax.swing.JTable tableUsState_thanhHung155;
+    private javax.swing.JLabel totalUser_thanhHung155 ;
+    private ArrayList<User> cloneArrUser_thanhHung155 ;
     /**
      * Creates new form Add2
      */
-    public AddUserScreen() {
+    
+    public DefaultTableModel getModelTable() {
+        DefaultTableModel model = (DefaultTableModel) tableUsState_thanhHung155.getModel();
+        return model;
+    }
+
+    public void setTable(ArrayList<User> list) {
+        getModelTable().getDataVector().removeAllElements();
+        list.forEach((user) -> {
+            getModelTable().addRow(new Object[]{user.getUserId() , user.getFirstName() + user.getLastName() ,user.getEmail() , user.getPhoneNumber() });
+        });
+    }
+    
+    public AddUserScreen(javax.swing.JTable table , ArrayList<User> listUser , javax.swing.JLabel labelTotal) {
         initComponents();
+        tableUsState_thanhHung155 = table ; 
+        cloneArrUser_thanhHung155 = listUser ;
+        totalUser_thanhHung155 = labelTotal ;
         userService = new UserService();
-         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
 
@@ -215,6 +243,13 @@ public class AddUserScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         userService.addUser(firstName_khoa15.getText(), lastName_khoa15.getText(), phone_khoa15.getText(), email_khoa15.getText(), new String(pass_khoa15.getPassword()));
         JOptionPane.showMessageDialog(null, "Add New User Success", "", JOptionPane.INFORMATION_MESSAGE);
+        try {
+            cloneArrUser_thanhHung155 = userService.getAllUser();
+        } catch (SQLException ex) {
+            Logger.getLogger(AddUserScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        setTable(cloneArrUser_thanhHung155);
+        totalUser_thanhHung155.setText(Integer.toString(cloneArrUser_thanhHung155.size()));
         this.setVisible(false);
     }//GEN-LAST:event_Bt_Add_khoa15ActionPerformed
 

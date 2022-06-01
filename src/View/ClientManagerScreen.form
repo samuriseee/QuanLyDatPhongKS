@@ -46,7 +46,7 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jPanel2" min="-2" pref="193" max="-2" attributes="0"/>
-                              <Component id="jTextField1" min="-2" pref="589" max="-2" attributes="0"/>
+                              <Component id="valueSearch_thanhHung155" min="-2" pref="589" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -77,7 +77,7 @@
                       <Group type="102" attributes="0">
                           <Component id="jPanel2" min="-2" pref="96" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="valueSearch_thanhHung155" min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
@@ -164,17 +164,35 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="183" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="totalUser_thanhHung155" min="-2" pref="92" max="-2" attributes="0"/>
+                      <EmptySpace pref="85" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="67" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="totalUser_thanhHung155" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="totalUser_thanhHung155">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel2"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="valueSearch_thanhHung155">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="18" style="1"/>
@@ -188,6 +206,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="valueSearch_thanhHung155KeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="AddButton">
           <Properties>

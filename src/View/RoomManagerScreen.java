@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -226,8 +227,9 @@ public class RoomManagerScreen extends javax.swing.JPanel {
                 int roomNumber = Integer.valueOf(String.valueOf(RoomTable_TuanKiet05.getValueAt(row, 0)));
                 try {
                     roomService_TuanKiet05.DeleteRoom(roomNumber);
-                    
+                    arrRoom_TuanKiet05.setArrListRoom(roomService_TuanKiet05.getAllRooms());
                     setTable(arrRoom_TuanKiet05.getArrListRoom());
+                    totalRoom_thanhHung155.setText(Integer.toString(arrRoom_TuanKiet05.getArrListRoom().size()));
                 } catch (SQLException ex) {
                     Logger.getLogger(RoomManagerScreen.class.getName()).log(Level.SEVERE, null, ex);
                 }
